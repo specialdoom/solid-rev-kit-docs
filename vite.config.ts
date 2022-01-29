@@ -6,7 +6,8 @@ export default defineConfig({
 	plugins: [solidPlugin()],
 	build: {
 		target: 'esnext',
-		outDir: '.',
+		outDir: 'public',
+		emptyOutDir: false,
 		lib: {
       entry: path.resolve(__dirname, 'index.tsx'),
       name: 'bundle',
