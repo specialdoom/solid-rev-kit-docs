@@ -8,10 +8,10 @@ export default defineConfig({
 		target: 'esnext',
 		outDir: '.',
 		lib: {
-			entry: path.resolve(__dirname, 'index.tsx'),
-			name: 'bundle',
-			fileName: 'bundle'
-		},
+      entry: path.resolve(__dirname, 'index.tsx'),
+      name: 'bundle',
+      fileName: 'bundle'
+    },
 		polyfillDynamicImport: false,
-	},
+	}
 });
