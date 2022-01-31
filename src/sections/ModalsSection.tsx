@@ -1,6 +1,5 @@
 import { Component, createSignal } from 'solid-js';
-import { Button } from '../../..';
-import { Modal } from '../../../src/components/modal';
+import { Modal, Button } from '@specialdoom/solid-rev-kit';
 import { Container } from '../Container';
 
 export const ModalsSection: Component = () => {
@@ -11,7 +10,7 @@ export const ModalsSection: Component = () => {
 			<Button variant='ghost' small onClick={() => setIsModalVisible(true)}>Open modal</Button>
 			<Modal
 				title='Modal Title'
-				visible={getIsModalVisible()}
+				visible={getIsModalVisible}
 				onOk={() => setIsModalVisible(false)}
 				onCancel={() => setIsModalVisible(false)}
 			>

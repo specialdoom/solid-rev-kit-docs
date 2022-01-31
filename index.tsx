@@ -12,6 +12,9 @@ import { TypeScaleSection } from './src/sections/TypeScaleSection';
 import { AvatarsSection } from './src/sections/AvatarsSection';
 import { IconsSection } from './src/sections/IconsSection';
 import { ColorsSection } from './src/sections/ColorsSection';
+import { Button, Modal } from '@specialdoom/solid-rev-kit';
+import { ModalsSection } from './src/sections/ModalsSection';
+import { TooltipsSection } from './src/sections/TooltipsSection';
 
 const App = () => {
   return (
@@ -38,6 +41,10 @@ const App = () => {
       <SpinnerSection />
       <Legend title="Callouts" rank={10} />
       <CalloutsSection />
+      <Legend title="Modals" rank={11} />
+      <ModalsSection />
+      <Legend title="Tooltips" rank={12} />
+      <TooltipsSection />
     </div>
   );
 };
