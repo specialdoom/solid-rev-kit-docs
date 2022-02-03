@@ -1179,6 +1179,377 @@ function cleanChildren(parent, current, marker, replacement) {
   return [node];
 }
 
+const _tmpl$$2 = template(`<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8 0C7.44772 0 7 0.447715 7 1V7H1C0.447715 7 0 7.44772 0 8C0 8.55228 0.447715 9 1 9H7V15C7 15.5523 7.44772 16 8 16C8.55228 16 9 15.5523 9 15V9H15C15.5523 9 16 8.55228 16 8C16 7.44772 15.5523 7 15 7H9V1C9 0.447715 8.55228 0 8 0Z"></path></svg>`),
+      _tmpl$2$1 = template(`<svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 1C0 0.447715 0.447715 0 1 0H15C15.5523 0 16 0.447715 16 1C16 1.55228 15.5523 2 15 2H1C0.447715 2 0 1.55228 0 1ZM0 6C0 5.44772 0.447715 5 1 5H15C15.5523 5 16 5.44772 16 6C16 6.55228 15.5523 7 15 7H1C0.447715 7 0 6.55228 0 6ZM1 10C0.447715 10 0 10.4477 0 11C0 11.5523 0.447715 12 1 12H15C15.5523 12 16 11.5523 16 11C16 10.4477 15.5523 10 15 10H1Z"></path></svg>`),
+      _tmpl$3 = template(`<svg width="14" height="16" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.292893 0.292893C-0.0976311 0.683418 -0.0976311 1.31658 0.292893 1.70711L5.58579 7L0.292893 12.2929C-0.0976309 12.6834 -0.0976309 13.3166 0.292893 13.7071C0.683418 14.0976 1.31658 14.0976 1.70711 13.7071L7 8.41421L12.2929 13.7071C12.6834 14.0976 13.3166 14.0976 13.7071 13.7071C14.0976 13.3166 14.0976 12.6834 13.7071 12.2929L8.41421 7L13.7071 1.70711C14.0976 1.31658 14.0976 0.683418 13.7071 0.292893C13.3166 -0.0976311 12.6834 -0.0976311 12.2929 0.292893L7 5.58579L1.70711 0.292893C1.31658 -0.0976311 0.683418 -0.0976311 0.292893 0.292893Z"></path></svg>`),
+      _tmpl$4 = template(`<svg width="4" height="16" viewBox="0 0 4 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2 4C3.10457 4 4 3.10457 4 2C4 0.89543 3.10457 0 2 0C0.89543 0 0 0.89543 0 2C0 3.10457 0.89543 4 2 4ZM2 11C3.10457 11 4 10.1046 4 9C4 7.89543 3.10457 7 2 7C0.89543 7 0 7.89543 0 9C0 10.1046 0.89543 11 2 11ZM4 16C4 17.1046 3.10457 18 2 18C0.89543 18 0 17.1046 0 16C0 14.8954 0.89543 14 2 14C3.10457 14 4 14.8954 4 16Z"></path></svg>`),
+      _tmpl$5 = template(`<svg width="16" height="16" viewBox="0 0 16 2" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 2C0.447715 2 0 1.55228 0 1C0 0.447715 0.447715 0 1 0H15C15.5523 0 16 0.447715 16 1C16 1.55228 15.5523 2 15 2H1Z"></path></svg>`),
+      _tmpl$6 = template(`<svg width="17" height="19" viewBox="0 0 17 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M7.5 15C3.35786 15 0 11.6421 0 7.5C0 3.35786 3.35786 0 7.5 0C11.6421 0 15 3.35786 15 7.5C15 9.48047 14.2324 11.2816 12.9784 12.6222L16.7809 17.3753C17.1259 17.8066 17.056 18.4359 16.6247 18.7809C16.1934 19.1259 15.5641 19.056 15.2191 18.6247L11.4304 13.8888C10.2875 14.5935 8.94124 15 7.5 15ZM7.5 13C10.5376 13 13 10.5376 13 7.5C13 4.46243 10.5376 2 7.5 2C4.46243 2 2 4.46243 2 7.5C2 10.5376 4.46243 13 7.5 13Z"></path></svg>`);
+
+const RevIcon = {
+  Plus: ({
+    fill
+  }) => (() => {
+    const _el$ = _tmpl$$2.cloneNode(true),
+          _el$2 = _el$.firstChild;
+
+    setAttribute(_el$2, "fill", fill);
+
+    return _el$;
+  })(),
+  Burger: ({
+    fill
+  }) => (() => {
+    const _el$3 = _tmpl$2$1.cloneNode(true),
+          _el$4 = _el$3.firstChild;
+
+    setAttribute(_el$4, "fill", fill);
+
+    return _el$3;
+  })(),
+  Cross: ({
+    fill
+  }) => (() => {
+    const _el$5 = _tmpl$3.cloneNode(true),
+          _el$6 = _el$5.firstChild;
+
+    setAttribute(_el$6, "fill", fill);
+
+    return _el$5;
+  })(),
+  More: ({
+    fill
+  }) => (() => {
+    const _el$7 = _tmpl$4.cloneNode(true),
+          _el$8 = _el$7.firstChild;
+
+    setAttribute(_el$8, "fill", fill);
+
+    return _el$7;
+  })(),
+  Minus: ({
+    fill
+  }) => (() => {
+    const _el$9 = _tmpl$5.cloneNode(true),
+          _el$10 = _el$9.firstChild;
+
+    setAttribute(_el$10, "fill", fill);
+
+    return _el$9;
+  })(),
+  Lens: ({
+    fill
+  }) => (() => {
+    const _el$11 = _tmpl$6.cloneNode(true),
+          _el$12 = _el$11.firstChild;
+
+    setAttribute(_el$12, "fill", fill);
+
+    return _el$11;
+  })()
+};
+
+const Icon = styled('span')`
+	height: 20px;
+	width: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+`;
+
+const Plus$1 = ({
+  fill = '#2c2738',
+  onClick
+}) => createComponent(Icon, {
+  onClick: onClick,
+
+  get children() {
+    return createComponent(RevIcon.Plus, {
+      fill: fill
+    });
+  }
+
+});
+
+const Cross$2 = ({
+  fill = '#2c2738',
+  onClick
+}) => createComponent(Icon, {
+  onClick: onClick,
+
+  get children() {
+    return createComponent(RevIcon.Cross, {
+      fill: fill
+    });
+  }
+
+});
+
+const Minus$1 = ({
+  fill = '#2c2738',
+  onClick
+}) => createComponent(Icon, {
+  onClick: onClick,
+
+  get children() {
+    return createComponent(RevIcon.Minus, {
+      fill: fill
+    });
+  }
+
+});
+
+const More$1 = ({
+  fill = '#2c2738',
+  onClick
+}) => createComponent(Icon, {
+  onClick: onClick,
+
+  get children() {
+    return createComponent(RevIcon.More, {
+      fill: fill
+    });
+  }
+
+});
+
+const Burger$1 = ({
+  fill = '#2c2738',
+  onClick
+}) => createComponent(Icon, {
+  onClick: onClick,
+
+  get children() {
+    return createComponent(RevIcon.Burger, {
+      fill: fill
+    });
+  }
+
+});
+
+const Lens$1 = ({
+  fill = '#2c2738',
+  onClick
+}) => createComponent(Icon, {
+  onClick: onClick,
+
+  get children() {
+    return createComponent(RevIcon.Lens, {
+      fill: fill
+    });
+  }
+
+});
+
+const Icons = Object.assign({}, {
+  Plus: Plus$1,
+  Cross: Cross$2,
+  Minus: Minus$1,
+  More: More$1,
+  Burger: Burger$1,
+  Lens: Lens$1
+});
+
+const calculateFontSize$1 = size => {
+  switch (size) {
+    case 1:
+      return '72px';
+
+    case 2:
+      return '64px';
+
+    case 3:
+      return '56px';
+
+    case 4:
+      return '34px';
+
+    case 5:
+      return '28px';
+
+    case 6:
+      return '20px';
+
+    default:
+      return '20px';
+  }
+};
+
+const StyledHeading = styled('h1')`
+	font-size: ${props => calculateFontSize$1(props.size)};
+	font-weight: ${props => props.weight};
+  color: ${props => props.theme.colors[props.type]};
+`;
+const Heading = ({
+  size = 1,
+  type = 'primary',
+  weight = 'normal',
+  children
+}) => createComponent(StyledHeading, {
+  size: size,
+  weight: weight,
+  type: type,
+  children: children
+});
+
+const calculateFontSize = size => {
+  switch (size) {
+    case 1:
+      return '16px';
+
+    case 2:
+      return '14px';
+
+    default:
+      return '16px';
+  }
+};
+
+const StyledParagraph = styled('p')`
+	font-size: ${props => calculateFontSize(props.size)};
+	font-weight: ${props => props.weight};
+  color: ${props => props.theme.colors[props.type]};
+`;
+const Paragraph = ({
+  size = 1,
+  weight = 'normal',
+  type = 'primary',
+  children
+}) => createComponent(StyledParagraph, {
+  size: size,
+  weight: weight,
+  type: type,
+  children: children
+});
+
+const Label = ({
+  type = 'primary',
+  children
+}) => createComponent(Paragraph, {
+  size: 1,
+  type: type,
+  weight: 'normal',
+  children: children
+});
+
+const {
+  Cross: Cross$1
+} = Icons;
+const StyledAlert = styled('div')`
+	background-color: ${props => props.theme.colors[props.type]};
+	box-sizing: border-box;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 24px;
+  border-radius: 10px;
+	color: ${props => props.theme.colors[props.textColor]};
+  font-weight: 400;
+	gap: 8px;
+
+	& svg {
+		cursor: pointer;
+	}
+`;
+const Alert = ({
+  type = 'bright',
+  textColor = 'bright',
+  iconColor = '#ffffff',
+  children
+}) => {
+  const [getClosed, setClosed] = createSignal(false);
+  return createComponent(Show, {
+    get when() {
+      return !getClosed();
+    },
+
+    get children() {
+      return createComponent(StyledAlert, {
+        type: type,
+        textColor: textColor,
+
+        get children() {
+          return [createComponent(Paragraph, {
+            type: textColor,
+            children: children
+          }), createComponent(Cross$1, {
+            fill: iconColor,
+            onClick: () => setClosed(true)
+          })];
+        }
+
+      });
+    }
+
+  });
+};
+
+const StyledAvatar$1 = styled('div')`
+	height: 56px;
+  width: 56px;
+  display: flex;
+  border-radius: ${props => props.round ? '50%' : '4px'};
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  background: ${props => props.theme.colors.muted};
+  color: ${props => props.theme.colors.bright};
+  font-weight: bold;
+`;
+const Avatar$1 = ({
+  initials,
+  round = false
+}) => createComponent(StyledAvatar$1, {
+  round: round,
+  children: initials
+});
+
+const getImageUrl = type => `https://storage.googleapis.com/rev-kit-assets/${type}.png`;
+
+const StyledAvatar = styled('div')`
+	height: 56px;
+	width: 56px;
+	border-radius: ${props => props.round ? '50%' : '4px'};
+	background-size: cover;
+	background-image: ${props => `url(${getImageUrl(props.type)})`};
+`;
+const DefaultAvatar = ({
+  type = 'steven',
+  round = false
+}) => createComponent(StyledAvatar, {
+  type: type,
+  round: round
+});
+
+const Avatar = Object.assign(Avatar$1, {
+  Steven: ({
+    round
+  }) => createComponent(DefaultAvatar, {
+    type: 'steven',
+    round: round
+  }),
+  Mike: ({
+    round
+  }) => createComponent(DefaultAvatar, {
+    type: 'mike',
+    round: round
+  }),
+  Mili: ({
+    round
+  }) => createComponent(DefaultAvatar, {
+    type: 'mili',
+    round: round
+  }),
+  Meg: ({
+    round
+  }) => createComponent(DefaultAvatar, {
+    type: 'meg',
+    round: round
+  })
+});
+
 const StyledButton = styled('button')`
   box-sizing: border-box;
   border: unset;
@@ -1268,286 +1639,360 @@ const Button = ({
   children: children
 });
 
-const calculateFontSize$1 = size => {
-  switch (size) {
-    case 1:
-      return '72px';
-
-    case 2:
-      return '64px';
-
-    case 3:
-      return '56px';
-
-    case 4:
-      return '34px';
-
-    case 5:
-      return '28px';
-
-    case 6:
-      return '20px';
-
-    default:
-      return '20px';
-  }
-};
-
-const StyledHeading = styled('h1')`
-	font-size: ${props => calculateFontSize$1(props.size)};
-	font-weight: ${props => props.weight};
-  color: ${props => props.theme.colors[props.type]};
-`;
-const Heading = ({
-  size = 1,
-  type = 'primary',
-  weight = 'normal',
-  children
-}) => createComponent(StyledHeading, {
-  size: size,
-  weight: weight,
-  type: type,
-  children: children
-});
-
-const calculateFontSize = size => {
-  switch (size) {
-    case 1:
-      return '16px';
-
-    case 2:
-      return '14px';
-
-    default:
-      return '16px';
-  }
-};
-
-const StyledParagraph = styled('p')`
-	font-size: ${props => calculateFontSize(props.size)};
-	font-weight: ${props => props.weight};
-  color: ${props => props.theme.colors[props.type]};
-`;
-const Paragraph = ({
-  size = 1,
-  weight = 'normal',
-  type = 'primary',
-  children
-}) => createComponent(StyledParagraph, {
-  size: size,
-  weight: weight,
-  type: type,
-  children: children
-});
-
-const Label = ({
-  type = 'primary',
-  children
-}) => createComponent(Paragraph, {
-  size: 1,
-  type: type,
-  weight: 'normal',
-  children: children
-});
-
-const _tmpl$$2 = template(`<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8 0C7.44772 0 7 0.447715 7 1V7H1C0.447715 7 0 7.44772 0 8C0 8.55228 0.447715 9 1 9H7V15C7 15.5523 7.44772 16 8 16C8.55228 16 9 15.5523 9 15V9H15C15.5523 9 16 8.55228 16 8C16 7.44772 15.5523 7 15 7H9V1C9 0.447715 8.55228 0 8 0Z"></path></svg>`),
-      _tmpl$2$1 = template(`<svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 1C0 0.447715 0.447715 0 1 0H15C15.5523 0 16 0.447715 16 1C16 1.55228 15.5523 2 15 2H1C0.447715 2 0 1.55228 0 1ZM0 6C0 5.44772 0.447715 5 1 5H15C15.5523 5 16 5.44772 16 6C16 6.55228 15.5523 7 15 7H1C0.447715 7 0 6.55228 0 6ZM1 10C0.447715 10 0 10.4477 0 11C0 11.5523 0.447715 12 1 12H15C15.5523 12 16 11.5523 16 11C16 10.4477 15.5523 10 15 10H1Z"></path></svg>`),
-      _tmpl$3 = template(`<svg width="14" height="16" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.292893 0.292893C-0.0976311 0.683418 -0.0976311 1.31658 0.292893 1.70711L5.58579 7L0.292893 12.2929C-0.0976309 12.6834 -0.0976309 13.3166 0.292893 13.7071C0.683418 14.0976 1.31658 14.0976 1.70711 13.7071L7 8.41421L12.2929 13.7071C12.6834 14.0976 13.3166 14.0976 13.7071 13.7071C14.0976 13.3166 14.0976 12.6834 13.7071 12.2929L8.41421 7L13.7071 1.70711C14.0976 1.31658 14.0976 0.683418 13.7071 0.292893C13.3166 -0.0976311 12.6834 -0.0976311 12.2929 0.292893L7 5.58579L1.70711 0.292893C1.31658 -0.0976311 0.683418 -0.0976311 0.292893 0.292893Z"></path></svg>`),
-      _tmpl$4 = template(`<svg width="4" height="16" viewBox="0 0 4 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2 4C3.10457 4 4 3.10457 4 2C4 0.89543 3.10457 0 2 0C0.89543 0 0 0.89543 0 2C0 3.10457 0.89543 4 2 4ZM2 11C3.10457 11 4 10.1046 4 9C4 7.89543 3.10457 7 2 7C0.89543 7 0 7.89543 0 9C0 10.1046 0.89543 11 2 11ZM4 16C4 17.1046 3.10457 18 2 18C0.89543 18 0 17.1046 0 16C0 14.8954 0.89543 14 2 14C3.10457 14 4 14.8954 4 16Z"></path></svg>`),
-      _tmpl$5 = template(`<svg width="16" height="16" viewBox="0 0 16 2" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 2C0.447715 2 0 1.55228 0 1C0 0.447715 0.447715 0 1 0H15C15.5523 0 16 0.447715 16 1C16 1.55228 15.5523 2 15 2H1Z"></path></svg>`);
-
-const RevIcon = {
-  Plus: ({
-    fill
-  }) => (() => {
-    const _el$ = _tmpl$$2.cloneNode(true),
-          _el$2 = _el$.firstChild;
-
-    setAttribute(_el$2, "fill", fill);
-
-    return _el$;
-  })(),
-  Burger: ({
-    fill
-  }) => (() => {
-    const _el$3 = _tmpl$2$1.cloneNode(true),
-          _el$4 = _el$3.firstChild;
-
-    setAttribute(_el$4, "fill", fill);
-
-    return _el$3;
-  })(),
-  Cross: ({
-    fill
-  }) => (() => {
-    const _el$5 = _tmpl$3.cloneNode(true),
-          _el$6 = _el$5.firstChild;
-
-    setAttribute(_el$6, "fill", fill);
-
-    return _el$5;
-  })(),
-  More: ({
-    fill
-  }) => (() => {
-    const _el$7 = _tmpl$4.cloneNode(true),
-          _el$8 = _el$7.firstChild;
-
-    setAttribute(_el$8, "fill", fill);
-
-    return _el$7;
-  })(),
-  Minus: ({
-    fill
-  }) => (() => {
-    const _el$9 = _tmpl$5.cloneNode(true),
-          _el$10 = _el$9.firstChild;
-
-    setAttribute(_el$10, "fill", fill);
-
-    return _el$9;
-  })()
-};
-
-const Icon = styled('span')`
-	height: 20px;
-	width: 20px;
-	display: flex;
-	justify-content: center;
+const StyledSmallCallout = styled('div')`
+	width: 100%;
+	height: 80%;
+	display: inline-flex;
+	justify-content: space-between;
 	align-items: center;
+	background: ${props => props.theme.colors.bright};
+	color: ${props => props.theme.colors.primary};
+	padding: 24px 20px;
+	border-radius: 8px;
+	box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+`;
+const ActionsContainer$1 = styled('div')`
+	display: inline-flex;
+	justify-content: ${props => props.small ? 'flex-end' : 'flex-start'};
+	align-items: center;
+	gap: 8px;
+`;
+const StyledLargeCallout = styled('div')`
+	width: 100%;
+	height: auto;
+	min-height: 200px;
+	padding: 40px;
+	display: flex;
+	flex-direction: column;
+	background: ${props => props.theme.colors.bright};
+	color: ${props => props.theme.colors.primary};
+	box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+	gap: 16px;
+	border-radius: 16px;
 `;
 
-const Plus$1 = ({
-  fill = '#2c2738',
-  onClick
-}) => createComponent(Icon, {
-  onClick: onClick,
+const SmallCallout = ({
+  text,
+  actions
+}) => createComponent(StyledSmallCallout, {
+  get children() {
+    return [createComponent(Heading, {
+      size: 6,
+      children: text
+    }), createComponent(ActionsContainer$1, {
+      small: true,
+
+      get children() {
+        return createComponent(For, {
+          each: actions,
+          children: action => action
+        });
+      }
+
+    })];
+  }
+
+});
+
+const Callout = ({
+  title,
+  text,
+  actions,
+  small = false
+}) => createComponent(Show, {
+  when: !small,
+  fallback: () => createComponent(SmallCallout, {
+    text: text,
+    actions: actions
+  }),
 
   get children() {
-    return createComponent(RevIcon.Plus, {
-      fill: fill
+    return createComponent(StyledLargeCallout, {
+      get children() {
+        return [createComponent(Heading, {
+          size: 4,
+          children: title
+        }), createComponent(Paragraph, {
+          children: text
+        }), createComponent(ActionsContainer$1, {
+          small: small,
+
+          get children() {
+            return createComponent(For, {
+              each: actions,
+              children: action => action
+            });
+          }
+
+        })];
+      }
+
     });
   }
 
 });
 
-const Cross$2 = ({
-  fill = '#2c2738',
-  onClick
-}) => createComponent(Icon, {
-  onClick: onClick,
+const StyledCard$1 = styled('div')`
+	height: fit-content;
+  width: 300px;
+  padding: 16px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  border-radius: 24px;
+	background: ${props => props.theme.colors.bright};
+	gap: 8px;
+`;
+const Image = styled('div')`
+	height: 200px;
+	background: ${props => props.src ? `url(${props.src})` : 'unset'};
+	background-size: cover;
+  border-radius: 16px;
+  width: 100%;
+`;
+const ActionsContainer = styled('div')`
+  padding: 8px 0;
+  height: auto;
+  font-size: 14px;
+`;
+const BodyContainer = styled('div')`
+  height: auto;
+  font-size: 14px;
+  padding: 8px 0;
+`;
+const Card = ({
+  imageSrc,
+  title,
+  children,
+  actions
+}) => {
+  return createComponent(StyledCard$1, {
+    get children() {
+      return [createComponent(Show, {
+        when: imageSrc,
 
+        get children() {
+          return createComponent(Image, {
+            src: imageSrc
+          });
+        }
+
+      }), createComponent(Heading, {
+        size: 5,
+        weight: 'bold',
+        children: title
+      }), createComponent(BodyContainer, {
+        children: children
+      }), createComponent(ActionsContainer, {
+        get children() {
+          return createComponent(For, {
+            each: actions,
+            children: action => action
+          });
+        }
+
+      })];
+    }
+
+  });
+};
+
+template(`<label></label>`);
+      template(`<h2></h2>`);
+      template(`<p></p>`);
+styled('div')`
+	background-color: ${props => props.backgroundColor};
+	color: ${props => props.color};
+	height: 240px;
+	width: 260px;
+	border-radius: 20px;
+	padding: 16px 20px;
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+`;
+styled('div')`
+	display: inline-flex;
+	justify-content: flex-end;
+	width: 100%;
+	height: 60%;
+`;
+
+const InputContainer = styled('div')`
+	display: inline-flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 52px;
+	outline: unset;
+	border-radius: 6px;
+	background: ${props => props.theme.colors.bright};
+	border: 1px solid ${props => props.theme.colors.shade};
+	font-size: 16px;
+	box-sizing: border-box;
+	gap: 16px;
+	padding: 0 16px;
+
+	&:focus-within {
+		outline: none;
+		border: 2px solid ${props => props.theme.colors.accent};
+	}
+`;
+const StyledInput = styled('input')`
+	outline: unset;
+	background: transparent;
+	border: unset;
+	font-size: 16px;
+	margin: 16px 0;
+
+	&::placeholder {
+		color: ${props => props.theme.colors.muted};
+	}
+
+	&:disabled, &:disabled::placeholder {
+		color: ${props => props.theme.colors.secondary};
+	}
+`;
+const Input = ({
+  value,
+  placeholder,
+  disabled,
+  icon,
+  onChange,
+  onBlur,
+  onInput
+}) => createComponent(InputContainer, {
   get children() {
-    return createComponent(RevIcon.Cross, {
-      fill: fill
-    });
+    return [createComponent(StyledInput, {
+      value: value,
+      placeholder: placeholder,
+      disabled: disabled,
+      onChange: onChange,
+      onBlur: onBlur,
+      onInput: onInput
+    }), createComponent(Show, {
+      when: icon,
+      children: icon
+    })];
   }
 
 });
 
-const Minus$1 = ({
-  fill = '#2c2738',
-  onClick
-}) => createComponent(Icon, {
-  onClick: onClick,
-
-  get children() {
-    return createComponent(RevIcon.Minus, {
-      fill: fill
-    });
-  }
-
-});
-
-const More$1 = ({
-  fill = '#2c2738',
-  onClick
-}) => createComponent(Icon, {
-  onClick: onClick,
-
-  get children() {
-    return createComponent(RevIcon.More, {
-      fill: fill
-    });
-  }
-
-});
-
-const Burger$1 = ({
-  fill = '#2c2738',
-  onClick
-}) => createComponent(Icon, {
-  onClick: onClick,
-
-  get children() {
-    return createComponent(RevIcon.Burger, {
-      fill: fill
-    });
-  }
-
-});
-
-const Icons = Object.assign({}, {
-  Plus: Plus$1,
-  Cross: Cross$2,
-  Minus: Minus$1,
-  More: More$1,
-  Burger: Burger$1
+const StyledSpace = styled('div')`
+	display: inline-flex;
+  gap: 8px;
+`;
+const Space = ({
+  children
+}) => createComponent(StyledSpace, {
+  children: children
 });
 
 const {
-  Cross: Cross$1
+  Cross: Cross$3
 } = Icons;
-const StyledAlert = styled('div')`
-	background-color: ${props => props.theme.colors[props.type]};
+const ModalWrap = styled('div')`
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+  overflow: auto;
+  outline: 0;
+`;
+const ModalDialog = styled('div')`
 	box-sizing: border-box;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  width: 100%;
-  display: flex;
+  background: ${props => props.theme.colors.bright};
+  color: ${props => props.theme.colors.primary};
+  font-size: 14px;
+  line-height: 1.5;
+  position: relative;
+  top: 100px;
+  z-index: 6;
+  max-width: 500px;
+  width: auto;
+  margin: 0 auto;
+  border-radius: 16px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 16px 24px;
+`;
+const ModalHeader = styled('div')`
+	display: inline-flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 24px;
-  border-radius: 10px;
-	color: ${props => props.theme.colors[props.textColor]};
-  font-weight: 400;
-	gap: 8px;
+  width: 100%;
 
 	& svg {
 		cursor: pointer;
 	}
 `;
-const Alert = ({
-  type = 'bright',
-  textColor = 'bright',
-  iconColor = '#ffffff',
+const ModalBody = styled('div')`
+	padding: 8px 0;
+`;
+const ModalActions = styled('div')`
+	width: 100%;
+  display: inline-flex;
+  justify-content: flex-end;
+  align-items: center;
+`;
+const Modal = ({
+  visible,
+  title,
+  onCancel,
+  onOk,
   children
-}) => {
-  const [getClosed, setClosed] = createSignal(false);
-  return createComponent(Show, {
-    get when() {
-      return !getClosed();
-    },
+}) => createComponent(Show, {
+  get when() {
+    return visible();
+  },
 
-    get children() {
-      return createComponent(StyledAlert, {
-        type: type,
-        textColor: textColor,
+  get children() {
+    return createComponent(ModalWrap, {
+      get children() {
+        return createComponent(ModalDialog, {
+          get children() {
+            return [createComponent(ModalHeader, {
+              get children() {
+                return [createComponent(Heading, {
+                  size: 5,
+                  weight: 'bold',
+                  children: title
+                }), createComponent(Cross$3, {
+                  onClick: onCancel
+                })];
+              }
 
-        get children() {
-          return [createComponent(Paragraph, {
-            type: textColor,
-            children: children
-          }), createComponent(Cross$1, {
-            fill: iconColor,
-            onClick: () => setClosed(true)
-          })];
-        }
+            }), createComponent(ModalBody, {
+              children: children
+            }), createComponent(ModalActions, {
+              get children() {
+                return createComponent(Space, {
+                  get children() {
+                    return [createComponent(Button, {
+                      variant: "ghost",
+                      onClick: onCancel,
+                      children: "Cancel"
+                    }), createComponent(Button, {
+                      onClick: onOk,
+                      children: "Action"
+                    })];
+                  }
 
-      });
-    }
+                });
+              }
 
-  });
-};
+            })];
+          }
+
+        });
+      }
+
+    });
+  }
+
+});
+
+template(`<div><div></div></div>`);
 
 const GlobalStyle = createGlobalStyles`
 	@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans');
@@ -1752,261 +2197,6 @@ const RevKitTheme = props => createComponent(ThemeProvider, {
 
 });
 
-const StyledAvatar$1 = styled('div')`
-	height: 56px;
-  width: 56px;
-  display: flex;
-  border-radius: ${props => props.round ? '50%' : '4px'};
-  justify-content: center;
-  align-items: center;
-  font-size: 16px;
-  background: ${props => props.theme.colors.muted};
-  color: ${props => props.theme.colors.bright};
-  font-weight: bold;
-`;
-const Avatar$1 = ({
-  initials,
-  round = false
-}) => createComponent(StyledAvatar$1, {
-  round: round,
-  children: initials
-});
-
-const getImageUrl = type => `https://storage.googleapis.com/rev-kit-assets/${type}.png`;
-
-const StyledAvatar = styled('div')`
-	height: 56px;
-	width: 56px;
-	border-radius: ${props => props.round ? '50%' : '4px'};
-	background-size: cover;
-	background-image: ${props => `url(${getImageUrl(props.type)})`};
-`;
-const DefaultAvatar = ({
-  type = 'steven',
-  round = false
-}) => createComponent(StyledAvatar, {
-  type: type,
-  round: round
-});
-
-const Avatar = Object.assign(Avatar$1, {
-  Steven: ({
-    round
-  }) => createComponent(DefaultAvatar, {
-    type: 'steven',
-    round: round
-  }),
-  Mike: ({
-    round
-  }) => createComponent(DefaultAvatar, {
-    type: 'mike',
-    round: round
-  }),
-  Mili: ({
-    round
-  }) => createComponent(DefaultAvatar, {
-    type: 'mili',
-    round: round
-  }),
-  Meg: ({
-    round
-  }) => createComponent(DefaultAvatar, {
-    type: 'meg',
-    round: round
-  })
-});
-
-const StyledSmallCallout = styled('div')`
-	width: 100%;
-	height: 80%;
-	display: inline-flex;
-	justify-content: space-between;
-	align-items: center;
-	background: ${props => props.theme.colors.bright};
-	color: ${props => props.theme.colors.primary};
-	padding: 24px 20px;
-	border-radius: 8px;
-	box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-`;
-const ActionsContainer$1 = styled('div')`
-	display: inline-flex;
-	justify-content: ${props => props.small ? 'flex-end' : 'flex-start'};
-	align-items: center;
-	gap: 8px;
-`;
-const StyledLargeCallout = styled('div')`
-	width: 100%;
-	height: auto;
-	min-height: 200px;
-	padding: 40px;
-	display: flex;
-	flex-direction: column;
-	background: ${props => props.theme.colors.bright};
-	color: ${props => props.theme.colors.primary};
-	box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-	gap: 16px;
-	border-radius: 16px;
-`;
-
-const SmallCallout = ({
-  text,
-  actions
-}) => createComponent(StyledSmallCallout, {
-  get children() {
-    return [createComponent(Heading, {
-      size: 6,
-      children: text
-    }), createComponent(ActionsContainer$1, {
-      small: true,
-
-      get children() {
-        return createComponent(For, {
-          each: actions,
-          children: action => action
-        });
-      }
-
-    })];
-  }
-
-});
-
-const Callout = ({
-  title,
-  text,
-  actions,
-  small = false
-}) => createComponent(Show, {
-  when: !small,
-  fallback: () => createComponent(SmallCallout, {
-    text: text,
-    actions: actions
-  }),
-
-  get children() {
-    return createComponent(StyledLargeCallout, {
-      get children() {
-        return [createComponent(Heading, {
-          size: 4,
-          children: title
-        }), createComponent(Paragraph, {
-          children: text
-        }), createComponent(ActionsContainer$1, {
-          small: small,
-
-          get children() {
-            return createComponent(For, {
-              each: actions,
-              children: action => action
-            });
-          }
-
-        })];
-      }
-
-    });
-  }
-
-});
-
-const StyledCard$1 = styled('div')`
-	height: fit-content;
-  width: 300px;
-  padding: 16px;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-  border-radius: 24px;
-	background: ${props => props.theme.colors.bright};
-	gap: 8px;
-`;
-const Image = styled('div')`
-	height: 200px;
-	background: ${props => props.src ? `url(${props.src})` : 'unset'};
-	background-size: cover;
-  border-radius: 16px;
-  width: 100%;
-`;
-const ActionsContainer = styled('div')`
-  padding: 8px 0;
-  height: auto;
-  font-size: 14px;
-`;
-const BodyContainer = styled('div')`
-  height: auto;
-  font-size: 14px;
-  padding: 8px 0;
-`;
-const Card = ({
-  imageSrc,
-  title,
-  children,
-  actions
-}) => {
-  return createComponent(StyledCard$1, {
-    get children() {
-      return [createComponent(Show, {
-        when: imageSrc,
-
-        get children() {
-          return createComponent(Image, {
-            src: imageSrc
-          });
-        }
-
-      }), createComponent(Heading, {
-        size: 5,
-        weight: 'bold',
-        children: title
-      }), createComponent(BodyContainer, {
-        children: children
-      }), createComponent(ActionsContainer, {
-        get children() {
-          return createComponent(For, {
-            each: actions,
-            children: action => action
-          });
-        }
-
-      })];
-    }
-
-  });
-};
-
-template(`<label></label>`);
-      template(`<h2></h2>`);
-      template(`<p></p>`);
-styled('div')`
-	background-color: ${props => props.backgroundColor};
-	color: ${props => props.color};
-	height: 240px;
-	width: 260px;
-	border-radius: 20px;
-	padding: 16px 20px;
-	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-`;
-styled('div')`
-	display: inline-flex;
-	justify-content: flex-end;
-	width: 100%;
-	height: 60%;
-`;
-
-template(`<div><div></div></div>`);
-
-const StyledSpace = styled('div')`
-	display: inline-flex;
-  gap: 8px;
-`;
-const Space = ({
-  children
-}) => createComponent(StyledSpace, {
-  children: children
-});
-
 const StyledSpinner = styled('div')`
 	border: 6px solid #f3f3f3;
   border-radius: 50%;
@@ -2056,111 +2246,6 @@ const Tag = ({
   type: type,
   textColor: textColor,
   children: children
-});
-
-const {
-  Cross: Cross$3
-} = Icons;
-const ModalWrap = styled('div')`
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 5;
-  overflow: auto;
-  outline: 0;
-`;
-const ModalDialog = styled('div')`
-	box-sizing: border-box;
-  background: ${props => props.theme.colors.bright};
-  color: ${props => props.theme.colors.primary};
-  font-size: 14px;
-  line-height: 1.5;
-  position: relative;
-  top: 100px;
-  z-index: 6;
-  max-width: 500px;
-  width: auto;
-  margin: 0 auto;
-  border-radius: 16px;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  padding: 16px 24px;
-`;
-const ModalHeader = styled('div')`
-	display: inline-flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-
-	& svg {
-		cursor: pointer;
-	}
-`;
-const ModalBody = styled('div')`
-	padding: 8px 0;
-`;
-const ModalActions = styled('div')`
-	width: 100%;
-  display: inline-flex;
-  justify-content: flex-end;
-  align-items: center;
-`;
-const Modal = ({
-  visible,
-  title,
-  onCancel,
-  onOk,
-  children
-}) => createComponent(Show, {
-  get when() {
-    return visible();
-  },
-
-  get children() {
-    return createComponent(ModalWrap, {
-      get children() {
-        return createComponent(ModalDialog, {
-          get children() {
-            return [createComponent(ModalHeader, {
-              get children() {
-                return [createComponent(Heading, {
-                  size: 5,
-                  weight: 'bold',
-                  children: title
-                }), createComponent(Cross$3, {
-                  onClick: onCancel
-                })];
-              }
-
-            }), createComponent(ModalBody, {
-              children: children
-            }), createComponent(ModalActions, {
-              get children() {
-                return createComponent(Space, {
-                  get children() {
-                    return [createComponent(Button, {
-                      variant: "ghost",
-                      onClick: onCancel,
-                      children: "Cancel"
-                    }), createComponent(Button, {
-                      onClick: onOk,
-                      children: "Action"
-                    })];
-                  }
-
-                });
-              }
-
-            })];
-          }
-
-        });
-      }
-
-    });
-  }
-
 });
 
 var top = 'top';
@@ -5873,7 +5958,8 @@ const {
   More,
   Plus,
   Minus,
-  Burger
+  Burger,
+  Lens
 } = Icons;
 const IconsSection = () => createComponent(Container, {
   type: 'fluid',
@@ -5883,7 +5969,7 @@ const IconsSection = () => createComponent(Container, {
   flexWrap: 'wrap',
 
   get children() {
-    return [createComponent(Cross, {}), createComponent(More, {}), createComponent(Plus, {}), createComponent(Minus, {}), createComponent(Burger, {})];
+    return [createComponent(Cross, {}), createComponent(More, {}), createComponent(Plus, {}), createComponent(Minus, {}), createComponent(Burger, {}), createComponent(Lens, {})];
   }
 
 });
@@ -6079,6 +6165,33 @@ const TooltipsSection = () => createComponent(Container, {
 
 });
 
+const FormSection = () => createComponent(Container, {
+  type: 'fluid',
+  flex: true,
+  gap: '16px',
+  flexDirection: 'row',
+  flexWrap: 'wrap',
+
+  get children() {
+    return [createComponent(Input, {}), createComponent(Input, {
+      value: "Value"
+    }), createComponent(Input, {
+      placeholder: "Placeholder"
+    }), createComponent(Input, {
+      value: "Disabled",
+      disabled: true
+    }), createComponent(Input, {
+      placeholder: "With icon",
+
+      get icon() {
+        return createComponent(Icons.Lens, {});
+      }
+
+    })];
+  }
+
+});
+
 const _tmpl$ = template$1(`<img alt="RevkitUI" width="100%">`),
       _tmpl$2 = template$1(`<div></div>`);
 
@@ -6104,80 +6217,89 @@ const App = () => {
 
     insert$1(_el$, createComponent(Legend, {
       title: "Colors",
-      rank: 2
+      rank: 1
     }), null);
 
     insert$1(_el$, createComponent(ColorsSection, {}), null);
 
     insert$1(_el$, createComponent(Legend, {
       title: "Icons",
-      rank: 3
+      rank: 2
     }), null);
 
     insert$1(_el$, createComponent(IconsSection, {}), null);
 
     insert$1(_el$, createComponent(Legend, {
+      title: "Form",
+      rank: 3
+    }), null);
+
+    insert$1(_el$, createComponent(FormSection, {}), null);
+
+    insert$1(_el$, createComponent(Legend, {
       title: "Buttons",
-      rank: 4
+      rank: 5
     }), null);
 
     insert$1(_el$, createComponent(ButtonsSection, {}), null);
 
     insert$1(_el$, createComponent(Legend, {
       title: "Avatars",
-      rank: 5
+      rank: 6
     }), null);
 
     insert$1(_el$, createComponent(AvatarsSection, {}), null);
 
     insert$1(_el$, createComponent(Legend, {
       title: "Type Scale",
-      rank: 6
+      rank: 7
     }), null);
 
     insert$1(_el$, createComponent(TypeScaleSection, {}), null);
 
     insert$1(_el$, createComponent(Legend, {
       title: "Cards",
-      rank: 7
+      rank: 8
     }), null);
 
     insert$1(_el$, createComponent(CardsSection, {}), null);
 
     insert$1(_el$, createComponent(Legend, {
       title: "Alerts",
-      rank: 8
+      rank: 9
     }), null);
 
     insert$1(_el$, createComponent(AlertsSection, {}), null);
 
     insert$1(_el$, createComponent(Legend, {
       title: "Spinners",
-      rank: 9
+      rank: 10
     }), null);
 
     insert$1(_el$, createComponent(SpinnerSection, {}), null);
 
     insert$1(_el$, createComponent(Legend, {
       title: "Callouts",
-      rank: 10
+      rank: 11
     }), null);
 
     insert$1(_el$, createComponent(CalloutsSection, {}), null);
 
     insert$1(_el$, createComponent(Legend, {
       title: "Modals",
-      rank: 11
+      rank: 12
     }), null);
 
     insert$1(_el$, createComponent(ModalsSection, {}), null);
 
     insert$1(_el$, createComponent(Legend, {
       title: "Tooltips",
-      rank: 12
+      rank: 13
     }), null);
 
     insert$1(_el$, createComponent(TooltipsSection, {}), null);
+
+    insert$1(_el$, createComponent(Input, {}), null);
 
     return _el$;
   })();
