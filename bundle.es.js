@@ -1184,7 +1184,8 @@ const _tmpl$$1$1 = template(`<svg width="16" height="16" viewBox="0 0 16 16" fil
       _tmpl$3 = template(`<svg width="14" height="16" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.292893 0.292893C-0.0976311 0.683418 -0.0976311 1.31658 0.292893 1.70711L5.58579 7L0.292893 12.2929C-0.0976309 12.6834 -0.0976309 13.3166 0.292893 13.7071C0.683418 14.0976 1.31658 14.0976 1.70711 13.7071L7 8.41421L12.2929 13.7071C12.6834 14.0976 13.3166 14.0976 13.7071 13.7071C14.0976 13.3166 14.0976 12.6834 13.7071 12.2929L8.41421 7L13.7071 1.70711C14.0976 1.31658 14.0976 0.683418 13.7071 0.292893C13.3166 -0.0976311 12.6834 -0.0976311 12.2929 0.292893L7 5.58579L1.70711 0.292893C1.31658 -0.0976311 0.683418 -0.0976311 0.292893 0.292893Z"></path></svg>`),
       _tmpl$4 = template(`<svg width="4" height="16" viewBox="0 0 4 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2 4C3.10457 4 4 3.10457 4 2C4 0.89543 3.10457 0 2 0C0.89543 0 0 0.89543 0 2C0 3.10457 0.89543 4 2 4ZM2 11C3.10457 11 4 10.1046 4 9C4 7.89543 3.10457 7 2 7C0.89543 7 0 7.89543 0 9C0 10.1046 0.89543 11 2 11ZM4 16C4 17.1046 3.10457 18 2 18C0.89543 18 0 17.1046 0 16C0 14.8954 0.89543 14 2 14C3.10457 14 4 14.8954 4 16Z"></path></svg>`),
       _tmpl$5 = template(`<svg width="16" height="16" viewBox="0 0 16 2" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 2C0.447715 2 0 1.55228 0 1C0 0.447715 0.447715 0 1 0H15C15.5523 0 16 0.447715 16 1C16 1.55228 15.5523 2 15 2H1Z"></path></svg>`),
-      _tmpl$6 = template(`<svg width="17" height="19" viewBox="0 0 17 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M7.5 15C3.35786 15 0 11.6421 0 7.5C0 3.35786 3.35786 0 7.5 0C11.6421 0 15 3.35786 15 7.5C15 9.48047 14.2324 11.2816 12.9784 12.6222L16.7809 17.3753C17.1259 17.8066 17.056 18.4359 16.6247 18.7809C16.1934 19.1259 15.5641 19.056 15.2191 18.6247L11.4304 13.8888C10.2875 14.5935 8.94124 15 7.5 15ZM7.5 13C10.5376 13 13 10.5376 13 7.5C13 4.46243 10.5376 2 7.5 2C4.46243 2 2 4.46243 2 7.5C2 10.5376 4.46243 13 7.5 13Z"></path></svg>`);
+      _tmpl$6 = template(`<svg width="17" height="16" viewBox="0 0 17 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M7.5 15C3.35786 15 0 11.6421 0 7.5C0 3.35786 3.35786 0 7.5 0C11.6421 0 15 3.35786 15 7.5C15 9.48047 14.2324 11.2816 12.9784 12.6222L16.7809 17.3753C17.1259 17.8066 17.056 18.4359 16.6247 18.7809C16.1934 19.1259 15.5641 19.056 15.2191 18.6247L11.4304 13.8888C10.2875 14.5935 8.94124 15 7.5 15ZM7.5 13C10.5376 13 13 10.5376 13 7.5C13 4.46243 10.5376 2 7.5 2C4.46243 2 2 4.46243 2 7.5C2 10.5376 4.46243 13 7.5 13Z"></path></svg>`),
+      _tmpl$7 = template(`<svg width="16" height="16" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M6 12C9.31371 12 12 9.31371 12 6C12 2.68629 9.31371 0 6 0C2.68629 0 0 2.68629 0 6C0 9.31371 2.68629 12 6 12Z"></path></svg>`);
 
 const RevIcon = {
   Plus: ({
@@ -1246,6 +1247,16 @@ const RevIcon = {
     setAttribute(_el$12, "fill", fill);
 
     return _el$11;
+  })(),
+  Circle: ({
+    fill
+  }) => (() => {
+    const _el$13 = _tmpl$7.cloneNode(true),
+          _el$14 = _el$13.firstChild;
+
+    setAttribute(_el$14, "fill", fill);
+
+    return _el$13;
   })()
 };
 
@@ -1341,13 +1352,28 @@ const Lens$1 = ({
 
 });
 
+const Circle = ({
+  fill = '#2c2738',
+  onClick
+}) => createComponent(Icon, {
+  onClick: onClick,
+
+  get children() {
+    return createComponent(RevIcon.Circle, {
+      fill: fill
+    });
+  }
+
+});
+
 const Icons = Object.assign({}, {
   Plus: Plus$1,
   Cross: Cross$2,
   Minus: Minus$1,
   More: More$1,
   Burger: Burger$1,
-  Lens: Lens$1
+  Lens: Lens$1,
+  Circle
 });
 
 const calculateFontSize$1 = size => {
@@ -1818,6 +1844,127 @@ styled('div')`
 	height: 60%;
 `;
 
+const CounterContainer = styled('div')`
+	display: inline-flex;
+	align-items: center;
+	height: 52px;
+	background: ${props => props.disabled ? props.theme.colors.shade : props.theme.colors.bright};
+	border-radius: 6px;
+`;
+const ControlButton = styled('button')`
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	padding: 12px;
+	width: 60px;
+	background: transparent;
+	border: unset;
+	outline: unset;
+	height: 100%;
+	cursor: pointer;
+
+	${props => props.side === 'left' ? `
+			border-top-left-radius: 6px;
+			border-bottom-left-radius: 6px;
+		` : `
+			border-top-right-radius: 6px;
+			border-bottom-right-radius: 6px;
+		`}
+
+	&:active {
+		background: ${props => props.theme.colors.accent};
+
+		& > span > svg > path {
+			fill: ${props => props.theme.colors.bright};
+		}
+	}
+
+	&:disabled {
+		background: ${props => props.theme.colors.shade};
+		& > span > svg > path {
+			fill: ${props => props.theme.colors.secondary};
+		}
+	}
+`;
+const ValueInput = styled('input')`
+	width: 60px;
+	padding: 12px;
+	outline: unset;
+	border: unset;
+	text-align: center;
+	font-size: 16px;
+	height: 100%;
+	border-left: 1px solid ${props => props.theme.colors.shade};
+	border-right: 1px solid ${props => props.theme.colors.shade};
+	background: transparent;
+`;
+const Counter = ({
+  defaultValue,
+  disabled,
+  maxValue = 999,
+  minValue = -999,
+  onInput,
+  ...rest
+}) => {
+  const [getValue, setValue] = createSignal(Number(defaultValue) ?? 0);
+
+  const handleInput = e => {
+    //@ts-ignore
+    if (!/^(0|-*[1-9]+[0-9]*)$/.test(e?.target?.value)) {
+      //@ts-ignore
+      e.target.value = e.target.value.slice(0, -1);
+    } //@ts-ignore
+
+
+    setValue(Number(e.target.value) ?? 0);
+    onInput?.(e);
+  };
+
+  const incremenet = () => setValue(v => v + 1);
+
+  const decrement = () => setValue(v => v - 1);
+
+  return createComponent(CounterContainer, {
+    disabled: disabled,
+
+    get children() {
+      return [createComponent(ControlButton, {
+        onClick: decrement,
+        side: 'left',
+
+        get disabled() {
+          return disabled || getValue() === minValue;
+        },
+
+        get children() {
+          return createComponent(Icons.Minus, {});
+        }
+
+      }), createComponent(ValueInput, mergeProps({
+        get value() {
+          return getValue();
+        },
+
+        onInput: handleInput,
+        disabled: disabled
+      }, rest)), createComponent(ControlButton, {
+        onClick: incremenet,
+        side: 'right',
+
+        get disabled() {
+          return disabled || getValue() === maxValue;
+        },
+
+        get children() {
+          return createComponent(Icons.Plus, {});
+        }
+
+      })];
+    }
+
+  });
+};
+
 const InputContainer = styled('div')`
 	display: inline-flex;
 	justify-content: space-between;
@@ -1877,6 +2024,7 @@ const StyledTextArea = styled('textarea')`
 	font-size: 16px;
 	padding: 16px;
 	border-radius: 6px;
+	height: fit-content;
 
 	&:focus {
 		outline: unset;
@@ -6193,27 +6341,72 @@ const FormSection = () => createComponent(Container, {
   flexWrap: 'wrap',
 
   get children() {
-    return [createComponent(Input, {}), createComponent(Input, {
-      value: "Value"
-    }), createComponent(Input, {
-      placeholder: "Placeholder"
-    }), createComponent(Input, {
-      value: "Disabled",
-      disabled: true
-    }), createComponent(Input, {
-      placeholder: "With icon",
+    return [createComponent(Container, {
+      type: 'full',
+      flex: true,
+      gap: '16px',
+      flexDirection: 'row',
+      flexWrap: 'wrap',
 
-      get icon() {
-        return createComponent(Icons.Lens, {});
+      get children() {
+        return [createComponent(Input, {}), createComponent(Input, {
+          value: "Value"
+        }), createComponent(Input, {
+          placeholder: "Placeholder"
+        }), createComponent(Input, {
+          value: "Disabled",
+          disabled: true
+        }), createComponent(Input, {
+          placeholder: "With icon",
+
+          get icon() {
+            return createComponent(Icons.Lens, {});
+          }
+
+        })];
       }
 
-    }), createComponent(TextArea, {}), createComponent(TextArea, {
-      value: "Value"
-    }), createComponent(TextArea, {
-      placeholder: "Placeholder"
-    }), createComponent(TextArea, {
-      placeholder: "Disabled",
-      disabled: true
+    }), createComponent(Container, {
+      type: 'full',
+      flex: true,
+      gap: '16px',
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+
+      get children() {
+        return [createComponent(TextArea, {}), createComponent(TextArea, {
+          value: "Value"
+        }), createComponent(TextArea, {
+          placeholder: "Placeholder"
+        }), createComponent(TextArea, {
+          placeholder: "Disabled",
+          disabled: true
+        }), createComponent(TextArea, {
+          placeholder: "Six rows textarea",
+          rows: 6
+        })];
+      }
+
+    }), createComponent(Container, {
+      type: 'full',
+      flex: true,
+      gap: '16px',
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+
+      get children() {
+        return [createComponent(Counter, {
+          defaultValue: 6
+        }), createComponent(Counter, {
+          defaultValue: 1,
+          minValue: -2,
+          maxValue: 2
+        }), createComponent(Counter, {
+          defaultValue: 2,
+          disabled: true
+        })];
+      }
+
     })];
   }
 
