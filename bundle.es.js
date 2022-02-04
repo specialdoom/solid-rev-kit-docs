@@ -1860,7 +1860,9 @@ const Input = ({
   disabled: disabled,
 
   get children() {
-    return [createComponent(StyledInput, rest), createComponent(Show, {
+    return [createComponent(StyledInput, mergeProps({
+      disabled: disabled
+    }, rest)), createComponent(Show, {
       when: icon,
       children: icon
     })];
