@@ -12,7 +12,6 @@ import { TypeScaleSection } from './src/sections/TypeScaleSection';
 import { AvatarsSection } from './src/sections/AvatarsSection';
 import { IconsSection } from './src/sections/IconsSection';
 import { ColorsSection } from './src/sections/ColorsSection';
-import { Input } from '@specialdoom/solid-rev-kit';
 import { ModalsSection } from './src/sections/ModalsSection';
 import { TooltipsSection } from './src/sections/TooltipsSection';
 import { FormSection } from './src/sections/FormSection';
@@ -47,7 +46,6 @@ const App = () => {
       <ModalsSection />
       <Legend title="Tooltips" rank={13} />
       <TooltipsSection />
-      <Input />
     </div>
   );
 };
