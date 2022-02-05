@@ -5,6 +5,7 @@ import { Container } from '../Container';
 
 const ButtonTypeContainer = styled('div')`
 	display: flex;
+	flex-wrap: wrap;
 	gap: 8px;
 `;
 

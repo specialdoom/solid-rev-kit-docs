@@ -1,4 +1,4 @@
-import { Input, Icons, TextArea, Counter } from '@specialdoom/solid-rev-kit';
+import { Input, Icons, TextArea, Counter, Switch } from '@specialdoom/solid-rev-kit';
 import { Container } from '../Container';
 
 export const FormSection = () => (
@@ -23,6 +23,13 @@ export const FormSection = () => (
 			<Counter defaultValue={6} />
 			<Counter defaultValue={1} minValue={-2} maxValue={2} />
 			<Counter defaultValue={2} disabled />
+		</Container>
+
+		<Container type='full' flex gap='16px' flexDirection='row' flexWrap='wrap'>
+			<Switch />
+			<Switch checked />
+			<Switch disabled />
+			<Switch checked disabled />
 		</Container>
 	</Container >
 );
