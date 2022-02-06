@@ -1,9 +1,10 @@
-import { Tooltip, Tag } from '@specialdoom/solid-rev-kit';
+import { Tooltip, Tag, Alert } from '@specialdoom/solid-rev-kit';
 import { Component } from 'solid-js';
 import { Container } from '../Container';
 
 export const TooltipsSection: Component = () => (
 	<Container type='fluid' flex gap='16px' flexWrap='wrap'>
+		<Alert type='warning'>Only skeleton of component developed! Using <code>tippy.js</code></Alert>
 		<Tooltip title='Tooltip title'>
 			<Tag>Tooltip auto</Tag>
 		</Tooltip>

@@ -15,6 +15,7 @@ import { ColorsSection } from './src/sections/ColorsSection';
 import { ModalsSection } from './src/sections/ModalsSection';
 import { TooltipsSection } from './src/sections/TooltipsSection';
 import { FormSection } from './src/sections/FormSection';
+import { ProgressSection } from './src/sections/ProgressSection';
 
 const App = () => {
   return (
@@ -40,11 +41,13 @@ const App = () => {
       <AlertsSection />
       <Legend title="Spinners" rank={10} />
       <SpinnerSection />
-      <Legend title="Callouts" rank={11} />
+      <Legend title="Progress" rank={11} />
+      <ProgressSection />
+      <Legend title="Callouts" rank={12} />
       <CalloutsSection />
-      <Legend title="Modals" rank={12} />
+      <Legend title="Modals" rank={13} />
       <ModalsSection />
-      <Legend title="Tooltips" rank={13} />
+      <Legend title="Tooltips" rank={14} />
       <TooltipsSection />
     </div>
   );
