@@ -675,7 +675,7 @@ function reconcileArrays$1(parentNode, a, b) {
   }
 }
 
-const $$EVENTS = "_$DX_DELEGATE";
+const $$EVENTS$1 = "_$DX_DELEGATE";
 function render$1(code, element, init) {
   let disposer;
   createRoot(dispose => {
@@ -694,13 +694,13 @@ function template$1(html, check, isSVG) {
   if (isSVG) node = node.firstChild;
   return node;
 }
-function delegateEvents(eventNames, document = window.document) {
-  const e = document[$$EVENTS] || (document[$$EVENTS] = new Set());
+function delegateEvents$1(eventNames, document = window.document) {
+  const e = document[$$EVENTS$1] || (document[$$EVENTS$1] = new Set());
   for (let i = 0, l = eventNames.length; i < l; i++) {
     const name = eventNames[i];
     if (!e.has(name)) {
       e.add(name);
-      document.addEventListener(name, eventHandler);
+      document.addEventListener(name, eventHandler$1);
     }
   }
 }
@@ -805,7 +805,7 @@ function assignProp(node, prop, value, prev, isSVG) {
     const name = prop.slice(2).toLowerCase();
     const delegate = DelegatedEvents.has(name);
     addEventListener(node, name, value, delegate);
-    delegate && delegateEvents([name]);
+    delegate && delegateEvents$1([name]);
   } else if ((isChildProp = ChildProperties.has(prop)) || !isSVG && (PropAliases[prop] || (isProp = Properties.has(prop))) || (isCE = node.nodeName.includes("-"))) {
     if (isCE && !isProp && !isChildProp) node[toPropertyName(prop)] = value;else node[PropAliases[prop] || prop] = value;
   } else {
@@ -814,7 +814,7 @@ function assignProp(node, prop, value, prev, isSVG) {
   }
   return value;
 }
-function eventHandler(e) {
+function eventHandler$1(e) {
   const key = `$$${e.type}`;
   let node = e.composedPath && e.composedPath()[0] || e.target;
   if (e.target !== node) {
@@ -1062,12 +1062,24 @@ function reconcileArrays(parentNode, a, b) {
     }
   }
 }
+
+const $$EVENTS = "_$DX_DELEGATE";
 function template(html, check, isSVG) {
   const t = document.createElement("template");
   t.innerHTML = html;
   let node = t.content.firstChild;
   if (isSVG) node = node.firstChild;
   return node;
+}
+function delegateEvents(eventNames, document = window.document) {
+  const e = document[$$EVENTS] || (document[$$EVENTS] = new Set());
+  for (let i = 0, l = eventNames.length; i < l; i++) {
+    const name = eventNames[i];
+    if (!e.has(name)) {
+      e.add(name);
+      document.addEventListener(name, eventHandler);
+    }
+  }
 }
 function setAttribute(node, name, value) {
   if (value == null) node.removeAttribute(name);else node.setAttribute(name, value);
@@ -1076,6 +1088,31 @@ function insert(parent, accessor, marker, initial) {
   if (marker !== undefined && !initial) initial = [];
   if (typeof accessor !== "function") return insertExpression(parent, accessor, initial, marker);
   createRenderEffect(current => insertExpression(parent, accessor(), current, marker), initial);
+}
+function eventHandler(e) {
+  const key = `$$${e.type}`;
+  let node = e.composedPath && e.composedPath()[0] || e.target;
+  if (e.target !== node) {
+    Object.defineProperty(e, "target", {
+      configurable: true,
+      value: node
+    });
+  }
+  Object.defineProperty(e, "currentTarget", {
+    configurable: true,
+    get() {
+      return node || document;
+    }
+  });
+  while (node !== null) {
+    const handler = node[key];
+    if (handler && !node.disabled) {
+      const data = node[`${key}Data`];
+      data !== undefined ? handler(data, e) : handler(e);
+      if (e.cancelBubble) return;
+    }
+    node = node.host && node.host !== node && node.host instanceof Node ? node.host : node.parentNode;
+  }
 }
 function insertExpression(parent, value, current, marker, unwrapArray) {
   while (typeof current === "function") current = current();
@@ -1179,19 +1216,21 @@ function cleanChildren(parent, current, marker, replacement) {
   return [node];
 }
 
-const _tmpl$$3 = template(`<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8 0C7.44772 0 7 0.447715 7 1V7H1C0.447715 7 0 7.44772 0 8C0 8.55228 0.447715 9 1 9H7V15C7 15.5523 7.44772 16 8 16C8.55228 16 9 15.5523 9 15V9H15C15.5523 9 16 8.55228 16 8C16 7.44772 15.5523 7 15 7H9V1C9 0.447715 8.55228 0 8 0Z"></path></svg>`),
+const _tmpl$$4 = template(`<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8 0C7.44772 0 7 0.447715 7 1V7H1C0.447715 7 0 7.44772 0 8C0 8.55228 0.447715 9 1 9H7V15C7 15.5523 7.44772 16 8 16C8.55228 16 9 15.5523 9 15V9H15C15.5523 9 16 8.55228 16 8C16 7.44772 15.5523 7 15 7H9V1C9 0.447715 8.55228 0 8 0Z"></path></svg>`),
       _tmpl$2$1 = template(`<svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 1C0 0.447715 0.447715 0 1 0H15C15.5523 0 16 0.447715 16 1C16 1.55228 15.5523 2 15 2H1C0.447715 2 0 1.55228 0 1ZM0 6C0 5.44772 0.447715 5 1 5H15C15.5523 5 16 5.44772 16 6C16 6.55228 15.5523 7 15 7H1C0.447715 7 0 6.55228 0 6ZM1 10C0.447715 10 0 10.4477 0 11C0 11.5523 0.447715 12 1 12H15C15.5523 12 16 11.5523 16 11C16 10.4477 15.5523 10 15 10H1Z"></path></svg>`),
       _tmpl$3 = template(`<svg width="14" height="16" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.292893 0.292893C-0.0976311 0.683418 -0.0976311 1.31658 0.292893 1.70711L5.58579 7L0.292893 12.2929C-0.0976309 12.6834 -0.0976309 13.3166 0.292893 13.7071C0.683418 14.0976 1.31658 14.0976 1.70711 13.7071L7 8.41421L12.2929 13.7071C12.6834 14.0976 13.3166 14.0976 13.7071 13.7071C14.0976 13.3166 14.0976 12.6834 13.7071 12.2929L8.41421 7L13.7071 1.70711C14.0976 1.31658 14.0976 0.683418 13.7071 0.292893C13.3166 -0.0976311 12.6834 -0.0976311 12.2929 0.292893L7 5.58579L1.70711 0.292893C1.31658 -0.0976311 0.683418 -0.0976311 0.292893 0.292893Z"></path></svg>`),
       _tmpl$4 = template(`<svg width="4" height="16" viewBox="0 0 4 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2 4C3.10457 4 4 3.10457 4 2C4 0.89543 3.10457 0 2 0C0.89543 0 0 0.89543 0 2C0 3.10457 0.89543 4 2 4ZM2 11C3.10457 11 4 10.1046 4 9C4 7.89543 3.10457 7 2 7C0.89543 7 0 7.89543 0 9C0 10.1046 0.89543 11 2 11ZM4 16C4 17.1046 3.10457 18 2 18C0.89543 18 0 17.1046 0 16C0 14.8954 0.89543 14 2 14C3.10457 14 4 14.8954 4 16Z"></path></svg>`),
       _tmpl$5 = template(`<svg width="16" height="16" viewBox="0 0 16 2" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 2C0.447715 2 0 1.55228 0 1C0 0.447715 0.447715 0 1 0H15C15.5523 0 16 0.447715 16 1C16 1.55228 15.5523 2 15 2H1Z"></path></svg>`),
       _tmpl$6 = template(`<svg width="17" height="16" viewBox="0 0 17 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M7.5 15C3.35786 15 0 11.6421 0 7.5C0 3.35786 3.35786 0 7.5 0C11.6421 0 15 3.35786 15 7.5C15 9.48047 14.2324 11.2816 12.9784 12.6222L16.7809 17.3753C17.1259 17.8066 17.056 18.4359 16.6247 18.7809C16.1934 19.1259 15.5641 19.056 15.2191 18.6247L11.4304 13.8888C10.2875 14.5935 8.94124 15 7.5 15ZM7.5 13C10.5376 13 13 10.5376 13 7.5C13 4.46243 10.5376 2 7.5 2C4.46243 2 2 4.46243 2 7.5C2 10.5376 4.46243 13 7.5 13Z"></path></svg>`),
-      _tmpl$7 = template(`<svg width="16" height="16" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M6 12C9.31371 12 12 9.31371 12 6C12 2.68629 9.31371 0 6 0C2.68629 0 0 2.68629 0 6C0 9.31371 2.68629 12 6 12Z"></path></svg>`);
+      _tmpl$7 = template(`<svg width="16" height="16" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M6 12C9.31371 12 12 9.31371 12 6C12 2.68629 9.31371 0 6 0C2.68629 0 0 2.68629 0 6C0 9.31371 2.68629 12 6 12Z"></path></svg>`),
+      _tmpl$8 = template(`<svg width="16" height="16" viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.41421 8L8.70711 14.2929C9.09763 14.6834 9.09763 15.3166 8.70711 15.7071C8.31658 16.0976 7.68342 16.0976 7.29289 15.7071L0.292893 8.70711C-0.0976311 8.31658 -0.0976311 7.68342 0.292893 7.29289L7.29289 0.292893C7.68342 -0.0976311 8.31658 -0.0976311 8.70711 0.292893C9.09763 0.683418 9.09763 1.31658 8.70711 1.70711L2.41421 8Z"></path></svg>`),
+      _tmpl$9 = template(`<svg width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 6.58579L14.2929 0.292893C14.6834 -0.0976311 15.3166 -0.0976311 15.7071 0.292893C16.0976 0.683418 16.0976 1.31658 15.7071 1.70711L8.70711 8.70711C8.31658 9.09763 7.68342 9.09763 7.29289 8.70711L0.292893 1.70711C-0.0976311 1.31658 -0.0976311 0.683418 0.292893 0.292893C0.683418 -0.0976311 1.31658 -0.0976311 1.70711 0.292893L8 6.58579Z"></path></svg>`);
 
 const RevIcon = {
   Plus: ({
     fill
   }) => (() => {
-    const _el$ = _tmpl$$3.cloneNode(true),
+    const _el$ = _tmpl$$4.cloneNode(true),
           _el$2 = _el$.firstChild;
 
     setAttribute(_el$2, "fill", fill);
@@ -1257,6 +1296,26 @@ const RevIcon = {
     setAttribute(_el$14, "fill", fill);
 
     return _el$13;
+  })(),
+  ChevronLeft: ({
+    fill
+  }) => (() => {
+    const _el$15 = _tmpl$8.cloneNode(true),
+          _el$16 = _el$15.firstChild;
+
+    setAttribute(_el$16, "fill", fill);
+
+    return _el$15;
+  })(),
+  ChevronDown: ({
+    fill
+  }) => (() => {
+    const _el$17 = _tmpl$9.cloneNode(true),
+          _el$18 = _el$17.firstChild;
+
+    setAttribute(_el$18, "fill", fill);
+
+    return _el$17;
   })()
 };
 
@@ -1366,6 +1425,34 @@ const Circle = ({
 
 });
 
+const ChevronLeft$1 = ({
+  fill = '#2c2738',
+  onClick
+}) => createComponent(Icon, {
+  onClick: onClick,
+
+  get children() {
+    return createComponent(RevIcon.ChevronLeft, {
+      fill: fill
+    });
+  }
+
+});
+
+const ChevronDown$1 = ({
+  fill = '#2c2738',
+  onClick
+}) => createComponent(Icon, {
+  onClick: onClick,
+
+  get children() {
+    return createComponent(RevIcon.ChevronDown, {
+      fill: fill
+    });
+  }
+
+});
+
 const Icons = Object.assign({}, {
   Plus: Plus$1,
   Cross: Cross$2,
@@ -1373,7 +1460,9 @@ const Icons = Object.assign({}, {
   More: More$1,
   Burger: Burger$1,
   Lens: Lens$1,
-  Circle
+  Circle,
+  ChevronLeft: ChevronLeft$1,
+  ChevronDown: ChevronDown$1
 });
 
 const calculateFontSize$1 = size => {
@@ -1979,6 +2068,7 @@ const InputContainer = styled('div')`
 	box-sizing: border-box;
 	gap: 16px;
 	padding: 0 16px;
+	min-width: 360px;
 
 	&:focus-within {
 		outline: none;
@@ -2026,6 +2116,7 @@ const StyledTextArea = styled('textarea')`
 	padding: 16px;
 	border-radius: 6px;
 	height: fit-content;
+	min-width: 360px;
 
 	&:focus {
 		outline: unset;
@@ -2163,7 +2254,7 @@ const Modal = ({
 
 });
 
-const _tmpl$$2$1 = template(`<div class="progress"></div>`);
+const _tmpl$$3 = template(`<div class="progress"></div>`);
 const StyledProgress = styled('div')`
 	width: 100%;
 	height: 8px;
@@ -2198,7 +2289,7 @@ const Progress = ({
   loading: loading,
 
   get children() {
-    return _tmpl$$2$1.cloneNode(true);
+    return _tmpl$$3.cloneNode(true);
   }
 
 });
@@ -2406,6 +2497,176 @@ const RevKitTheme = props => createComponent(ThemeProvider, {
 
 });
 
+const _tmpl$$2$1 = template(`<div class="select"></div>`);
+const {
+  ChevronLeft,
+  ChevronDown
+} = Icons;
+const SelectContainer = styled('div')`
+	position: relative;
+	user-select: none;
+	outline: none;
+	width: auto;
+	height: auto;
+
+	& .select {
+		background: ${props => props.theme.colors.bright};
+    border: 1px solid ${props => props.theme.colors.shade};
+		border-radius: 6px;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+		min-width: 360px;
+    height: 52px;
+    padding: 5px;
+    box-sizing: border-box;
+		padding: 16px;
+
+		& span svg path {
+			fill: ${props => props.theme.colors.accent};
+		}
+
+		&.selected {
+			border: 2px solid ${props => props.theme.colors.accent};
+		}
+
+		&.disabled {
+			background: ${props => props.theme.colors.shade};
+			color: ${props => props.theme.colors.secondary};
+
+			& span svg path {
+				fill: ${props => props.theme.colors.secondary};
+			}
+		}
+	}
+`;
+const SelectPlaceholder = styled('span')`
+	color: ${props => props.theme.colors.muted};
+`;
+const OptionsList = styled('div')`
+	position: absolute;
+	top: 60px;
+	display: flex;
+	flex-direction: column;
+	min-width: 360px;
+	list-style-type: none;
+	padding: 12px 0;
+	border-radius: 6px;
+	background: ${props => props.theme.colors.bright};
+	z-index: 3;
+`;
+const OptionListItem = styled('div')`
+	height: 44px;
+	text-align: left;
+	padding: 12px 15px;
+	background: ${props => props.selected ? props.theme.colors.tint : props.theme.colors.bright};
+
+	&:hover, &.selected  {
+		background: ${props => props.theme.colors.tint};
+	}
+`;
+
+const clickOutside = (el, accessor) => {
+  const onClick = e => !el.contains(e.target) && accessor()?.();
+
+  document.body.addEventListener("click", onClick);
+  onCleanup(() => document.body.removeEventListener("click", onClick));
+};
+
+const Select = ({
+  options = ['test'],
+  placeholder = 'Select',
+  defaultOption,
+  disabled = false
+}) => {
+  const [getOpen, setOpen] = createSignal(false);
+  const [getSelectedOption, setSelectedOption] = createSignal(defaultOption);
+
+  const handleOptionSelect = option => {
+    setSelectedOption(option);
+    setOpen(false);
+  };
+
+  const handleClick = () => {
+    if (disabled) return;
+    setOpen(v => !v);
+  };
+
+  return createComponent(SelectContainer, {
+    get children() {
+      return [(() => {
+        const _el$ = _tmpl$$2$1.cloneNode(true);
+
+        clickOutside(_el$, () => () => setOpen(false));
+        _el$.$$click = handleClick;
+
+        _el$.classList.toggle("disabled", disabled);
+
+        insert(_el$, createComponent(Show, {
+          get when() {
+            return getSelectedOption();
+          },
+
+          fallback: () => createComponent(SelectPlaceholder, {
+            children: placeholder
+          }),
+
+          get children() {
+            return getSelectedOption();
+          }
+
+        }), null);
+
+        insert(_el$, createComponent(Show, {
+          get when() {
+            return getOpen();
+          },
+
+          fallback: () => createComponent(ChevronLeft, {}),
+
+          get children() {
+            return createComponent(ChevronDown, {});
+          }
+
+        }), null);
+
+        createRenderEffect(() => _el$.classList.toggle("selected", getOpen()));
+
+        return _el$;
+      })(), createComponent(Show, {
+        get when() {
+          return getOpen();
+        },
+
+        get children() {
+          return createComponent(OptionsList, {
+            get children() {
+              return createComponent(For, {
+                each: options,
+                children: option => createComponent(OptionListItem, {
+                  onClick: () => handleOptionSelect(option),
+
+                  get selected() {
+                    return option === getSelectedOption();
+                  },
+
+                  children: option
+                })
+              });
+            }
+
+          });
+        }
+
+      })];
+    }
+
+  });
+};
+
+delegateEvents(["click"]);
+
 const _tmpl$$1$1 = template(`<input type="checkbox">`),
       _tmpl$2$2 = template(`<div class="slider"><div class="toggle"></div></div>`);
 const StyledButton = styled('button')`
@@ -2435,8 +2696,8 @@ const StyledButton = styled('button')`
 	}
 
 	.slider .toggle {
-		height: 24px;
-		width: 24px;
+		height: 20px;
+		width: 20px;
 		border-radius: 50%;
 		background-color: ${props => props.theme.colors.bright};
 		border: 1px solid ${props => props.theme.colors.shade};
@@ -2462,7 +2723,7 @@ const StyledButton = styled('button')`
 	}
 
 	input:checked + .slider .toggle {
-		transform: translateX(19px);
+		transform: translateX(22px);
   	transition: .4s;
 	}
 `;
@@ -5836,7 +6097,7 @@ tippy.setDefaultProps({
   render: render
 });
 
-const _tmpl$$4 = template(`<div></div>`);
+const _tmpl$$5 = template(`<div></div>`);
 const Tooltip = ({
   type = 'accent',
   title,
@@ -5854,7 +6115,7 @@ const Tooltip = ({
     });
   });
   return (() => {
-    const _el$ = _tmpl$$4.cloneNode(true);
+    const _el$ = _tmpl$$5.cloneNode(true);
 
     const _ref$ = divRef;
     typeof _ref$ === "function" ? _ref$(_el$) : divRef = _el$;
@@ -6560,6 +6821,39 @@ const FormSection = () => createComponent(Container, {
           disabled: true
         }), createComponent(Switch, {
           checked: true,
+          disabled: true
+        })];
+      }
+
+    }), createComponent(Container, {
+      type: 'full',
+      flex: true,
+      gap: '16px',
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+
+      get children() {
+        return [createComponent(Alert, {
+          type: 'warning',
+          children: "[Select]: Skeleton of component only! Not fully functional!"
+        }), createComponent(Select, {
+          options: ['Item 1', 'Item 2', 'Item 3']
+        }), createComponent(Select, {
+          options: ['Item 1', 'Item 2', 'Item 3'],
+          placeholder: 'Select placeholder'
+        }), createComponent(Select, {
+          options: ['Item 1', 'Item 2', 'Item 3'],
+          defaultOption: 'Item 1'
+        }), createComponent(Select, {
+          options: ['Item 1', 'Item 2', 'Item 3'],
+          disabled: true
+        }), createComponent(Select, {
+          options: ['Item 1', 'Item 2', 'Item 3'],
+          placeholder: 'Select disabled placeholder',
+          disabled: true
+        }), createComponent(Select, {
+          options: ['Item 1', 'Item 2', 'Item 3'],
+          defaultOption: 'Item 1',
           disabled: true
         })];
       }
