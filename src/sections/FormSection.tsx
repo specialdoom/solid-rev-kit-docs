@@ -1,4 +1,4 @@
-import { Input, Icons, TextArea, Counter, Switch } from '@specialdoom/solid-rev-kit';
+import { Input, Icons, TextArea, Counter, Switch, Select, Alert } from '@specialdoom/solid-rev-kit';
 import { Container } from '../Container';
 
 export const FormSection = () => (
@@ -30,6 +30,16 @@ export const FormSection = () => (
 			<Switch checked />
 			<Switch disabled />
 			<Switch checked disabled />
+		</Container>
+
+		<Container type='full' flex gap='16px' flexDirection='row' flexWrap='wrap'>
+			<Alert type='warning'>[Select]: Skeleton of component only! Not fully functional!</Alert>
+			<Select options={['Item 1', 'Item 2', 'Item 3']} />
+			<Select options={['Item 1', 'Item 2', 'Item 3']} placeholder='Select placeholder' />
+			<Select options={['Item 1', 'Item 2', 'Item 3']} defaultOption='Item 1' />
+			<Select options={['Item 1', 'Item 2', 'Item 3']} disabled />
+			<Select options={['Item 1', 'Item 2', 'Item 3']} placeholder='Select disabled placeholder' disabled />
+			<Select options={['Item 1', 'Item 2', 'Item 3']} defaultOption='Item 1' disabled />
 		</Container>
 	</Container >
 );
