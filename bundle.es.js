@@ -2499,8 +2499,8 @@ const RevKitTheme = props => createComponent(ThemeProvider, {
 
 const _tmpl$$2$1 = template(`<div class="select"></div>`);
 const {
-  ChevronLeft,
-  ChevronDown
+  ChevronLeft: ChevronLeft$2,
+  ChevronDown: ChevronDown$2
 } = Icons;
 const SelectContainer = styled('div')`
 	position: relative;
@@ -2623,10 +2623,10 @@ const Select = ({
             return getOpen();
           },
 
-          fallback: () => createComponent(ChevronLeft, {}),
+          fallback: () => createComponent(ChevronLeft$2, {}),
 
           get children() {
-            return createComponent(ChevronDown, {});
+            return createComponent(ChevronDown$2, {});
           }
 
         }), null);
@@ -6519,7 +6519,9 @@ const {
   Plus,
   Minus,
   Burger,
-  Lens
+  Lens,
+  ChevronLeft,
+  ChevronDown
 } = Icons;
 const IconsSection = () => createComponent(Container, {
   type: 'fluid',
@@ -6529,7 +6531,7 @@ const IconsSection = () => createComponent(Container, {
   flexWrap: 'wrap',
 
   get children() {
-    return [createComponent(Cross, {}), createComponent(More, {}), createComponent(Plus, {}), createComponent(Minus, {}), createComponent(Burger, {}), createComponent(Lens, {})];
+    return [createComponent(Cross, {}), createComponent(More, {}), createComponent(Plus, {}), createComponent(Minus, {}), createComponent(Burger, {}), createComponent(Lens, {}), createComponent(ChevronLeft, {}), createComponent(ChevronDown, {})];
   }
 
 });
