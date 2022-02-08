@@ -2,7 +2,7 @@ import { Component } from 'solid-js';
 import { Icons } from '@specialdoom/solid-rev-kit';
 import { Container } from '../Container';
 
-const { Cross, More, Plus, Minus, Burger, Lens } = Icons;
+const { Cross, More, Plus, Minus, Burger, Lens, ChevronLeft, ChevronDown } = Icons;
 
 export const IconsSection: Component = () => (
 	<Container type='fluid' flex gap='16px' flexDirection='row' flexWrap='wrap'>
@@ -12,5 +12,7 @@ export const IconsSection: Component = () => (
 		<Minus />
 		<Burger />
 		<Lens />
+		<ChevronLeft />
+		<ChevronDown />
 	</Container>
 );
