@@ -13,7 +13,6 @@ import { AvatarsSection } from './src/sections/AvatarsSection';
 import { IconsSection } from './src/sections/IconsSection';
 import { ColorsSection } from './src/sections/ColorsSection';
 import { ModalsSection } from './src/sections/ModalsSection';
-import { TooltipsSection } from './src/sections/TooltipsSection';
 import { FormSection } from './src/sections/FormSection';
 import { ProgressSection } from './src/sections/ProgressSection';
 
@@ -47,8 +46,6 @@ const App = () => {
       <CalloutsSection />
       <Legend title="Modals" rank={13} />
       <ModalsSection />
-      <Legend title="Tooltips" rank={14} />
-      <TooltipsSection />
     </div>
   );
 };
