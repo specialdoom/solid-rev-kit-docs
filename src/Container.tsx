@@ -2,7 +2,7 @@ import { Component } from 'solid-js';
 import { styled } from 'solid-styled-components';
 
 interface ContainerProps {
-	type: 'full' | 'fluid'
+	type: 'full' | 'fluid' | 'auto'
 	flex?: boolean
 	flexDirection?:
 	| 'row'
@@ -37,7 +37,7 @@ interface ContainerProps {
 }
 
 const StyledContainer = styled('div') <{
-	type: 'full' | 'fluid'
+	type: 'full' | 'fluid' | 'auto'
 	flex?: boolean
 	flexDirection?:
 	| 'row'
@@ -54,7 +54,7 @@ const StyledContainer = styled('div') <{
 }>`
   margin-left: auto;
   margin-right: auto;
-  width: ${props => props.type === 'full' ? '100%' : '80%'};
+  width: ${props => props.type === 'full' ? '100%' : props.type === 'fluid' ? '80%' : 'auto'};
   display: ${props => props.flex ? 'flex' : 'block'};
   flex-direction: ${props =>
 		props.flexDirection ? props.flexDirection : 'row'};

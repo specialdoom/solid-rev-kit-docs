@@ -15,6 +15,7 @@ import { ColorsSection } from './src/sections/ColorsSection';
 import { ModalsSection } from './src/sections/ModalsSection';
 import { FormSection } from './src/sections/FormSection';
 import { ProgressSection } from './src/sections/ProgressSection';
+import { TypefaceSection } from './src/sections/TypefaceSection';
 
 const App = () => {
   return (
@@ -22,11 +23,13 @@ const App = () => {
       <Container type='full' padding='0'>
         <img src={branding} alt='RevkitUI' width='100%' />
       </Container>
-      <Legend title="Colors" rank={1} />
+      <Legend title="Typeface" rank={1} />
+      <TypefaceSection />
+      <Legend title="Colors" rank={2} />
       <ColorsSection />
-      <Legend title="Icons" rank={2} />
+      <Legend title="Icons" rank={3} />
       <IconsSection />
-      <Legend title="Form" rank={3} />
+      <Legend title="Form" rank={4} />
       <FormSection />
       <Legend title="Buttons" rank={5} />
       <ButtonsSection />

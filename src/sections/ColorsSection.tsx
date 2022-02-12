@@ -1,76 +1,17 @@
-import { For } from 'solid-js';
-import { Heading, Label } from '@specialdoom/solid-rev-kit';
-import { ColorCard } from '../components/ColorCard';
+import { Card, revConstants } from '@specialdoom/solid-rev-kit';
 import { Container } from '../Container';
 
-const colors = [
-	{
-		backgroundColor: '#0880AE',
-		label: 'accent',
-		labelType: 'bright',
-		headingType: 'bright'
-	},
-	{
-		backgroundColor: '#F2AC57',
-		label: 'warning',
-		labelType: 'bright',
-		headingType: 'bright'
-	},
-	{
-		backgroundColor: '#14A38B',
-		label: 'success',
-		labelType: 'bright',
-		headingType: 'bright'
-	},
-	{
-		backgroundColor: '#FF7171',
-		label: 'error',
-		labelType: 'bright',
-		headingType: 'bright'
-	},
-	{
-		backgroundColor: '#2C2738',
-		color: '#ffffff',
-		label: 'primary',
-		labelType: 'bright',
-		headingType: 'bright'
-	},
-	{
-		backgroundColor: '#FFFFFF',
-		label: 'bright',
-		labelType: 'primary',
-		headingType: 'primary'
-	},
-	{
-		backgroundColor: '#DBE2EA',
-		color: '#2C2738',
-		label: 'shade',
-		labelType: 'primary',
-		headingType: 'primary'
-	},
-	{
-		backgroundColor: '#EBF4F8',
-		label: 'tint',
-		labelType: 'primary',
-		headingType: 'primary'
-	}
-];
-
 export const ColorsSection = () => (
-	<Container type='fluid' flex flexWrap='wrap' gap='8px' justifyContent='space-evenly'>
-		<For each={colors}>
-			{
-				color => (
-					<ColorCard
-						backgroundColor={color.backgroundColor}
-					>
-						<Label type={color.labelType}>
-							{color.label}
-						</Label>
-						<Heading size={4} type={color.headingType}>{color.backgroundColor}</Heading>
-					</ColorCard>
-				)
-			}
-		</For>
+	<Container type='fluid' flex flexWrap='wrap' gap='10px' justifyContent='center' >
+		<Card.Fill background={revConstants.theme.colors.accent} label='Accent' title={revConstants.theme.colors.accent} small />
+		<Card.Fill background={revConstants.theme.colors.warning} label='Warning' title={revConstants.theme.colors.warning} small />
+		<Card.Fill background={revConstants.theme.colors.success} label='Success' title={revConstants.theme.colors.success} small />
+		<Card.Fill background={revConstants.theme.colors.error} label='Error' title={revConstants.theme.colors.error} small />
+		<Card.Fill background={revConstants.theme.colors.primary} label='Primary or Dark' title={revConstants.theme.colors.primary} small />
+		<Card.Fill background={revConstants.theme.colors.secondary} label='Secondary' title={revConstants.theme.colors.secondary} small />
+		<Card.Fill background={revConstants.theme.colors.muted} label='Muted' title={revConstants.theme.colors.muted} small />
+		<Card.Fill background={revConstants.theme.colors.bright} label='Bright' title={revConstants.theme.colors.bright} small color='#000' />
+		<Card.Fill background={revConstants.theme.colors.shade} label='Shade' title={revConstants.theme.colors.shade} small color='#000' />
+		<Card.Fill background={revConstants.theme.colors.tint} label='Tint' title={revConstants.theme.colors.tint} small color='#000' />
 	</Container>
 );

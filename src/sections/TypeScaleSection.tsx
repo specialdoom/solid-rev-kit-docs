@@ -1,5 +1,5 @@
 import { Component, For } from 'solid-js';
-import { Heading, Label, Paragraph } from '@specialdoom/solid-rev-kit';
+import { Typography } from '@specialdoom/solid-rev-kit';
 import { Container } from '../Container';
 
 const types: any[] = ['primary', 'accent', 'error', 'success', 'warning', 'secondary', 'muted', 'bright'];
@@ -13,12 +13,12 @@ export const TypeScaleSection: Component = () => (
 					<div>
 						<For each={sizes}>
 							{size => (
-								<Heading size={size} type={type}>{`Heading x${size}`}</Heading>
+								<Typography.Heading size={size} type={type}>{`Heading x${size}`}</Typography.Heading>
 							)}
 						</For>
-						<Paragraph type={type}>Paragraph x1</Paragraph>
-						<Paragraph size={2} type={type}>Paragraph x2</Paragraph>
-						<Label type={type}>Label</Label>
+						<Typography.Paragraph type={type}>Paragraph x1</Typography.Paragraph>
+						<Typography.Paragraph size={2} type={type}>Paragraph x2</Typography.Paragraph>
+						<Typography.Label type={type}>Label</Typography.Label>
 					</div>
 				)
 			}

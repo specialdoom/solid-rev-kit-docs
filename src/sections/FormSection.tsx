@@ -1,4 +1,4 @@
-import { Input, Icons, TextArea, Counter, Switch, Select, Alert } from '@specialdoom/solid-rev-kit';
+import { Input, Icons, TextArea, Counter, Switch, Select, Alert, Tag } from '@specialdoom/solid-rev-kit';
 import { Container } from '../Container';
 
 export const FormSection = () => (
@@ -20,9 +20,9 @@ export const FormSection = () => (
 		</Container>
 
 		<Container type='full' flex gap='16px' flexDirection='row' flexWrap='wrap'>
-			<Counter defaultValue={6} />
-			<Counter defaultValue={1} minValue={-2} maxValue={2} />
-			<Counter defaultValue={2} disabled />
+			<Counter value={6} />
+			<Counter value={1} minValue={-2} maxValue={2} />
+			<Counter value={2} disabled />
 		</Container>
 
 		<Container type='full' flex gap='16px' flexDirection='row' flexWrap='wrap'>
@@ -40,6 +40,17 @@ export const FormSection = () => (
 			<Select options={['Item 1', 'Item 2', 'Item 3']} disabled />
 			<Select options={['Item 1', 'Item 2', 'Item 3']} placeholder='Select disabled placeholder' disabled />
 			<Select options={['Item 1', 'Item 2', 'Item 3']} defaultOption='Item 1' disabled />
+		</Container>
+
+		<Container type='full' flex gap='16px' flexDirection='row' flexWrap='wrap'>
+			<Tag type="bright" color="accent">
+				Bright tag
+			</Tag>
+			<Tag type="dark">Dark tag</Tag>
+			<Tag type="success">Success tag</Tag>
+			<Tag type="warning">Warning tag</Tag>
+			<Tag type="error">Error tag</Tag>
+			<Tag type="accent">Accent tag</Tag>
 		</Container>
 	</Container >
 );
