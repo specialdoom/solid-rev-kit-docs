@@ -2615,6 +2615,16 @@ const OptionListItem = styled('div')`
 	&:hover, &.selected  {
 		background: ${props => props.theme.colors.tint};
 	}
+
+	${props => props.disabled ? `
+		background: ${props.theme.colors.shade};
+		color: ${props.theme.colors.secondary};
+		pointer-events: none;
+
+		&:hover {
+			background: ${props.theme.colors.shade};
+		}
+	` : ''}
 `;
 
 const clickOutside = (el, accessor) => {
@@ -2628,13 +2638,18 @@ const Select = ({
   options = [],
   placeholder,
   defaultOption,
-  disabled = false
+  disabled = false,
+  onSelect,
+  onChange,
+  onBlur
 }) => {
   const [getOpen, setOpen] = createSignal(false);
   const [getSelectedOption, setSelectedOption] = createSignal(defaultOption);
 
   const handleOptionSelect = option => {
     setSelectedOption(option);
+    onSelect?.(option);
+    onChange?.(option);
     setOpen(false);
   };
 
@@ -2648,7 +2663,10 @@ const Select = ({
       return [(() => {
         const _el$ = _tmpl$$1$1.cloneNode(true);
 
-        clickOutside(_el$, () => () => setOpen(false));
+        clickOutside(_el$, () => () => {
+          setOpen(false);
+          onBlur?.(getSelectedOption());
+        });
         _el$.$$click = handleClick;
 
         _el$.classList.toggle("disabled", disabled);
@@ -2663,7 +2681,7 @@ const Select = ({
           }),
 
           get children() {
-            return getSelectedOption();
+            return options.find(item => item.value === getSelectedOption())?.label;
           }
 
         }), null);
@@ -2695,13 +2713,23 @@ const Select = ({
               return createComponent(For, {
                 each: options,
                 children: option => createComponent(OptionListItem, {
-                  onClick: () => handleOptionSelect(option),
-
-                  get selected() {
-                    return option === getSelectedOption();
+                  onClick: () => {
+                    if (option.disabled) return;
+                    handleOptionSelect(option.value);
                   },
 
-                  children: option
+                  get selected() {
+                    return option.value === getSelectedOption();
+                  },
+
+                  get disabled() {
+                    return option.disabled;
+                  },
+
+                  get children() {
+                    return option.label;
+                  }
+
                 })
               });
             }
@@ -3429,165 +3457,175 @@ const ModalsSection = () => {
   });
 };
 
-const FormSection = () => createComponent(Container, {
-  type: 'fluid',
-  flex: true,
-  gap: '16px',
-  flexDirection: 'row',
-  flexWrap: 'wrap',
+const FormSection = () => {
+  const selectOptions = [{
+    label: '🥭 Mango',
+    value: 'Mango'
+  }, {
+    label: '🍊 Orange',
+    value: 'Orange'
+  }, {
+    label: '🍎 Apple',
+    value: 'Apple',
+    disabled: true
+  }];
+  return createComponent(Container, {
+    type: 'fluid',
+    flex: true,
+    gap: '16px',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
 
-  get children() {
-    return [createComponent(Container, {
-      type: 'full',
-      flex: true,
-      gap: '16px',
-      flexDirection: 'row',
-      flexWrap: 'wrap',
+    get children() {
+      return [createComponent(Container, {
+        type: 'full',
+        flex: true,
+        gap: '16px',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
 
-      get children() {
-        return [createComponent(Input, {}), createComponent(Input, {
-          value: "Value"
-        }), createComponent(Input, {
-          placeholder: "Placeholder"
-        }), createComponent(Input, {
-          value: "Disabled",
-          disabled: true
-        }), createComponent(Input, {
-          placeholder: "With icon",
+        get children() {
+          return [createComponent(Input, {}), createComponent(Input, {
+            value: "Value"
+          }), createComponent(Input, {
+            placeholder: "Placeholder"
+          }), createComponent(Input, {
+            value: "Disabled",
+            disabled: true
+          }), createComponent(Input, {
+            placeholder: "With icon",
 
-          get icon() {
-            return createComponent(Icons.Lens, {});
-          }
+            get icon() {
+              return createComponent(Icons.Lens, {});
+            }
 
-        })];
-      }
+          })];
+        }
 
-    }), createComponent(Container, {
-      type: 'full',
-      flex: true,
-      gap: '16px',
-      flexDirection: 'row',
-      flexWrap: 'wrap',
+      }), createComponent(Container, {
+        type: 'full',
+        flex: true,
+        gap: '16px',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
 
-      get children() {
-        return [createComponent(TextArea, {}), createComponent(TextArea, {
-          value: "Value"
-        }), createComponent(TextArea, {
-          placeholder: "Placeholder"
-        }), createComponent(TextArea, {
-          placeholder: "Disabled",
-          disabled: true
-        }), createComponent(TextArea, {
-          placeholder: "Six rows textarea",
-          rows: 6
-        })];
-      }
+        get children() {
+          return [createComponent(TextArea, {}), createComponent(TextArea, {
+            value: "Value"
+          }), createComponent(TextArea, {
+            placeholder: "Placeholder"
+          }), createComponent(TextArea, {
+            placeholder: "Disabled",
+            disabled: true
+          }), createComponent(TextArea, {
+            placeholder: "Six rows textarea",
+            rows: 6
+          })];
+        }
 
-    }), createComponent(Container, {
-      type: 'full',
-      flex: true,
-      gap: '16px',
-      flexDirection: 'row',
-      flexWrap: 'wrap',
+      }), createComponent(Container, {
+        type: 'full',
+        flex: true,
+        gap: '16px',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
 
-      get children() {
-        return [createComponent(Counter, {
-          value: 6
-        }), createComponent(Counter, {
-          value: 1,
-          minValue: -2,
-          maxValue: 2
-        }), createComponent(Counter, {
-          value: 2,
-          disabled: true
-        })];
-      }
+        get children() {
+          return [createComponent(Counter, {
+            value: 6
+          }), createComponent(Counter, {
+            value: 1,
+            minValue: -2,
+            maxValue: 2
+          }), createComponent(Counter, {
+            value: 2,
+            disabled: true
+          })];
+        }
 
-    }), createComponent(Container, {
-      type: 'full',
-      flex: true,
-      gap: '16px',
-      flexDirection: 'row',
-      flexWrap: 'wrap',
+      }), createComponent(Container, {
+        type: 'full',
+        flex: true,
+        gap: '16px',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
 
-      get children() {
-        return [createComponent(Switch, {}), createComponent(Switch, {
-          checked: true
-        }), createComponent(Switch, {
-          disabled: true
-        }), createComponent(Switch, {
-          checked: true,
-          disabled: true
-        })];
-      }
+        get children() {
+          return [createComponent(Switch, {}), createComponent(Switch, {
+            checked: true
+          }), createComponent(Switch, {
+            disabled: true
+          }), createComponent(Switch, {
+            checked: true,
+            disabled: true
+          })];
+        }
 
-    }), createComponent(Container, {
-      type: 'full',
-      flex: true,
-      gap: '16px',
-      flexDirection: 'row',
-      flexWrap: 'wrap',
+      }), createComponent(Container, {
+        type: 'full',
+        flex: true,
+        gap: '16px',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
 
-      get children() {
-        return [createComponent(Alert, {
-          type: 'warning',
-          children: "[Select]: Skeleton of component only! Not fully functional!"
-        }), createComponent(Select, {
-          options: ['Item 1', 'Item 2', 'Item 3']
-        }), createComponent(Select, {
-          options: ['Item 1', 'Item 2', 'Item 3'],
-          placeholder: 'Select placeholder'
-        }), createComponent(Select, {
-          options: ['Item 1', 'Item 2', 'Item 3'],
-          defaultOption: 'Item 1'
-        }), createComponent(Select, {
-          options: ['Item 1', 'Item 2', 'Item 3'],
-          disabled: true
-        }), createComponent(Select, {
-          options: ['Item 1', 'Item 2', 'Item 3'],
-          placeholder: 'Select disabled placeholder',
-          disabled: true
-        }), createComponent(Select, {
-          options: ['Item 1', 'Item 2', 'Item 3'],
-          defaultOption: 'Item 1',
-          disabled: true
-        })];
-      }
+        get children() {
+          return [createComponent(Select, {
+            options: selectOptions
+          }), createComponent(Select, {
+            options: selectOptions,
+            placeholder: 'Select placeholder'
+          }), createComponent(Select, {
+            options: selectOptions,
+            defaultOption: 'Mango'
+          }), createComponent(Select, {
+            options: selectOptions,
+            disabled: true
+          }), createComponent(Select, {
+            options: selectOptions,
+            placeholder: 'Select disabled placeholder',
+            disabled: true
+          }), createComponent(Select, {
+            options: selectOptions,
+            defaultOption: 'Mango',
+            disabled: true
+          })];
+        }
 
-    }), createComponent(Container, {
-      type: 'full',
-      flex: true,
-      gap: '16px',
-      flexDirection: 'row',
-      flexWrap: 'wrap',
+      }), createComponent(Container, {
+        type: 'full',
+        flex: true,
+        gap: '16px',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
 
-      get children() {
-        return [createComponent(Tag, {
-          type: "bright",
-          color: "accent",
-          children: "Bright tag"
-        }), createComponent(Tag, {
-          type: "dark",
-          children: "Dark tag"
-        }), createComponent(Tag, {
-          type: "success",
-          children: "Success tag"
-        }), createComponent(Tag, {
-          type: "warning",
-          children: "Warning tag"
-        }), createComponent(Tag, {
-          type: "error",
-          children: "Error tag"
-        }), createComponent(Tag, {
-          type: "accent",
-          children: "Accent tag"
-        })];
-      }
+        get children() {
+          return [createComponent(Tag, {
+            type: "bright",
+            color: "accent",
+            children: "Bright tag"
+          }), createComponent(Tag, {
+            type: "dark",
+            children: "Dark tag"
+          }), createComponent(Tag, {
+            type: "success",
+            children: "Success tag"
+          }), createComponent(Tag, {
+            type: "warning",
+            children: "Warning tag"
+          }), createComponent(Tag, {
+            type: "error",
+            children: "Error tag"
+          }), createComponent(Tag, {
+            type: "accent",
+            children: "Accent tag"
+          })];
+        }
 
-    })];
-  }
+      })];
+    }
 
-});
+  });
+};
 
 const ProgressSection = () => createComponent(Container, {
   type: 'fluid',
