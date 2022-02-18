@@ -1,4 +1,4 @@
-import { render } from 'solid-js/web';
+import { For, render } from 'solid-js/web';
 import { RevKitTheme } from '@specialdoom/solid-rev-kit';
 import { Container } from './src/Container';
 import branding from './src/assets/branding.svg';
@@ -16,6 +16,71 @@ import { ModalsSection } from './src/sections/ModalsSection';
 import { FormSection } from './src/sections/FormSection';
 import { ProgressSection } from './src/sections/ProgressSection';
 import { TypefaceSection } from './src/sections/TypefaceSection';
+import { TooltipsSection } from './src/sections/TooltipsSection';
+import { ChatBubblesSection } from './src/sections/ChatBubblesSection';
+
+const sections = [
+  {
+    title: 'Typeface',
+    component: TypefaceSection
+  },
+  {
+    title: 'Colors',
+    component: ColorsSection
+  },
+  {
+    title: 'Icons',
+    component: IconsSection
+  },
+  {
+    title: 'Form',
+    component: FormSection
+  },
+  {
+    title: 'Tooltip',
+    component: TooltipsSection
+  },
+  {
+    title: 'Button',
+    component: ButtonsSection
+  },
+  {
+    title: 'Avatars',
+    component: AvatarsSection
+  },
+  {
+    title: 'Type Scale',
+    component: TypeScaleSection
+  },
+  {
+    title: 'Cards',
+    component: CardsSection
+  },
+  {
+    title: 'Alerts',
+    component: AlertsSection
+  },
+  {
+    title: 'Chat Bubbles',
+    component: ChatBubblesSection
+  },
+  {
+    title: 'Spinner',
+    component: SpinnerSection
+  },
+  {
+    title: 'Progress',
+    component: ProgressSection
+  },
+  {
+    title: 'Callouts',
+    component: CalloutsSection
+  },
+  {
+    title: 'Modals',
+    component: ModalsSection
+  }
+];
 
 const App = () => {
   return (
@@ -23,32 +88,13 @@ const App = () => {
       <Container type='full' padding='0'>
         <img src={branding} alt='RevkitUI' width='100%' />
       </Container>
-      <Legend title="Typeface" rank={1} />
-      <TypefaceSection />
-      <Legend title="Colors" rank={2} />
-      <ColorsSection />
-      <Legend title="Icons" rank={3} />
-      <IconsSection />
-      <Legend title="Form" rank={4} />
-      <FormSection />
-      <Legend title="Buttons" rank={5} />
-      <ButtonsSection />
-      <Legend title="Avatars" rank={6} />
-      <AvatarsSection />
-      <Legend title="Type Scale" rank={7} />
-      <TypeScaleSection />
-      <Legend title="Cards" rank={8} />
-      <CardsSection />
-      <Legend title="Alerts" rank={9} />
-      <AlertsSection />
-      <Legend title="Spinners" rank={10} />
-      <SpinnerSection />
-      <Legend title="Progress" rank={11} />
-      <ProgressSection />
-      <Legend title="Callouts" rank={12} />
-      <CalloutsSection />
-      <Legend title="Modals" rank={13} />
-      <ModalsSection />
+      <For each={sections}>{(section, getIndex) =>
+        <>
+          <Legend title={section.title} rank={getIndex() + 1} />
+          {section.component}
+        </>
+      }
+      </For>
     </div>
   );
 };
