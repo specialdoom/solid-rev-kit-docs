@@ -1334,7 +1334,9 @@ const _tmpl$$5 = template(`<svg width="16" height="16" viewBox="0 0 16 16" fill=
       _tmpl$6$1 = template(`<svg width="17" height="16" viewBox="0 0 17 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M7.5 15C3.35786 15 0 11.6421 0 7.5C0 3.35786 3.35786 0 7.5 0C11.6421 0 15 3.35786 15 7.5C15 9.48047 14.2324 11.2816 12.9784 12.6222L16.7809 17.3753C17.1259 17.8066 17.056 18.4359 16.6247 18.7809C16.1934 19.1259 15.5641 19.056 15.2191 18.6247L11.4304 13.8888C10.2875 14.5935 8.94124 15 7.5 15ZM7.5 13C10.5376 13 13 10.5376 13 7.5C13 4.46243 10.5376 2 7.5 2C4.46243 2 2 4.46243 2 7.5C2 10.5376 4.46243 13 7.5 13Z"></path></svg>`),
       _tmpl$7$1 = template(`<svg width="16" height="16" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M6 12C9.31371 12 12 9.31371 12 6C12 2.68629 9.31371 0 6 0C2.68629 0 0 2.68629 0 6C0 9.31371 2.68629 12 6 12Z"></path></svg>`),
       _tmpl$8$1 = template(`<svg width="16" height="16" viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.41421 8L8.70711 14.2929C9.09763 14.6834 9.09763 15.3166 8.70711 15.7071C8.31658 16.0976 7.68342 16.0976 7.29289 15.7071L0.292893 8.70711C-0.0976311 8.31658 -0.0976311 7.68342 0.292893 7.29289L7.29289 0.292893C7.68342 -0.0976311 8.31658 -0.0976311 8.70711 0.292893C9.09763 0.683418 9.09763 1.31658 8.70711 1.70711L2.41421 8Z"></path></svg>`),
-      _tmpl$9$1 = template(`<svg width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 6.58579L14.2929 0.292893C14.6834 -0.0976311 15.3166 -0.0976311 15.7071 0.292893C16.0976 0.683418 16.0976 1.31658 15.7071 1.70711L8.70711 8.70711C8.31658 9.09763 7.68342 9.09763 7.29289 8.70711L0.292893 1.70711C-0.0976311 1.31658 -0.0976311 0.683418 0.292893 0.292893C0.683418 -0.0976311 1.31658 -0.0976311 1.70711 0.292893L8 6.58579Z"></path></svg>`);
+      _tmpl$9$1 = template(`<svg width="16" height="16" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 6.58579L14.2929 0.292893C14.6834 -0.0976311 15.3166 -0.0976311 15.7071 0.292893C16.0976 0.683418 16.0976 1.31658 15.7071 1.70711L8.70711 8.70711C8.31658 9.09763 7.68342 9.09763 7.29289 8.70711L0.292893 1.70711C-0.0976311 1.31658 -0.0976311 0.683418 0.292893 0.292893C0.683418 -0.0976311 1.31658 -0.0976311 1.70711 0.292893L8 6.58579Z"></path></svg>`),
+      _tmpl$10$1 = template(`<svg width="18" height="16" viewBox="0 0 18 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M11.6749 7.25522C12.3302 7.72407 13.1329 8 14 8C16.2091 8 18 6.20914 18 4C18 1.79086 16.2091 0 14 0C11.7909 0 10 1.79086 10 4C10 4.61262 10.1377 5.19307 10.3839 5.71208L6.77272 8.11693C6.05368 7.42525 5.0765 7 4 7C1.79086 7 0 8.79086 0 11C0 13.2091 1.79086 15 4 15C5.07511 15 6.05115 14.5758 6.76992 13.8858L10.3751 16.3065C10.1344 16.8208 10 17.3947 10 18C10 20.2091 11.7909 22 14 22C16.2091 22 18 20.2091 18 18C18 15.7909 16.2091 14 14 14C13.1248 14 12.3152 14.2811 11.6566 14.758L7.8221 12.1832C7.93773 11.8093 8 11.4119 8 11C8 10.5894 7.93812 10.1932 7.82319 9.82028L11.6749 7.25522ZM16 4C16 5.10457 15.1046 6 14 6C12.8954 6 12 5.10457 12 4C12 2.89543 12.8954 2 14 2C15.1046 2 16 2.89543 16 4ZM16 18C16 19.1046 15.1046 20 14 20C12.8954 20 12 19.1046 12 18C12 16.8954 12.8954 16 14 16C15.1046 16 16 16.8954 16 18ZM6 11C6 12.1046 5.10457 13 4 13C2.89543 13 2 12.1046 2 11C2 9.89543 2.89543 9 4 9C5.10457 9 6 9.89543 6 11Z"></path></svg>`),
+      _tmpl$11$1 = template(`<svg width="22" height="16" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M1.89036 11.4623L9.53555 19.3885C10.0409 19.9124 10.7609 20.0998 11.4198 19.9502C11.7965 19.8705 12.1545 19.6812 12.4427 19.3825L20.1115 11.4341C22.6314 8.81686 22.6292 4.60714 20.1066 1.99257C17.6012 -0.604129 13.5446 -0.663127 10.9687 1.8173C8.39543 -0.61733 4.37655 -0.545123 1.88939 2.03324C-0.630172 4.64519 -0.629744 8.85091 1.89036 11.4623ZM18.6673 3.38125C20.4429 5.22154 20.4444 8.20475 18.6707 10.047L10.975 18L3.32951 10.0735C1.5571 8.23686 1.55679 5.25878 3.32883 3.42176C5.10087 1.58475 7.97422 1.58443 9.74663 3.42106L10.9702 4.68964L12.236 3.37772C14.0134 1.53938 16.8917 1.54096 18.6673 3.38125Z"></path></svg>`);
 
 const RevIcon = {
   Plus: ({
@@ -1426,6 +1428,26 @@ const RevIcon = {
     setAttribute(_el$18, "fill", fill);
 
     return _el$17;
+  })(),
+  Share: ({
+    fill
+  }) => (() => {
+    const _el$19 = _tmpl$10$1.cloneNode(true),
+          _el$20 = _el$19.firstChild;
+
+    setAttribute(_el$20, "fill", fill);
+
+    return _el$19;
+  })(),
+  Heart: ({
+    fill
+  }) => (() => {
+    const _el$21 = _tmpl$11$1.cloneNode(true),
+          _el$22 = _el$21.firstChild;
+
+    setAttribute(_el$22, "fill", fill);
+
+    return _el$21;
   })()
 };
 
@@ -1563,16 +1585,46 @@ const ChevronDown$1 = ({
 
 });
 
+const Share = ({
+  fill = '#2c2738',
+  onClick
+}) => createComponent(Icon, {
+  onClick: onClick,
+
+  get children() {
+    return createComponent(RevIcon.Share, {
+      fill: fill
+    });
+  }
+
+});
+
+const Heart = ({
+  fill = '#2c2738',
+  onClick
+}) => createComponent(Icon, {
+  onClick: onClick,
+
+  get children() {
+    return createComponent(RevIcon.Heart, {
+      fill: fill
+    });
+  }
+
+});
+
 const Icons = Object.assign({}, {
-  Plus: Plus$1,
+  Burger: Burger$1,
+  ChevronLeft: ChevronLeft$1,
+  ChevronDown: ChevronDown$1,
+  Circle,
   Cross: Cross$2,
+  Heart,
+  Lens: Lens$1,
   Minus: Minus$1,
   More: More$1,
-  Burger: Burger$1,
-  Lens: Lens$1,
-  Circle,
-  ChevronLeft: ChevronLeft$1,
-  ChevronDown: ChevronDown$1
+  Plus: Plus$1,
+  Share
 });
 
 const calculateFontSize$1 = size => {
@@ -1885,7 +1937,7 @@ const StyledSmallCallout = styled('div')`
 	border-radius: 8px;
 	box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 `;
-const ActionsContainer$1 = styled('div')`
+const ActionsContainer$2 = styled('div')`
 	display: inline-flex;
 	justify-content: ${props => props.small ? 'flex-end' : 'flex-start'};
 	align-items: center;
@@ -1913,7 +1965,7 @@ const SmallCallout = ({
     return [createComponent(Typography.Heading, {
       size: 6,
       children: description
-    }), createComponent(ActionsContainer$1, {
+    }), createComponent(ActionsContainer$2, {
       small: true,
 
       get children() {
@@ -1948,7 +2000,7 @@ const Callout = ({
           children: title
         }), createComponent(Typography.Paragraph, {
           children: description
-        }), createComponent(ActionsContainer$1, {
+        }), createComponent(ActionsContainer$2, {
           small: small,
 
           get children() {
@@ -1986,7 +2038,7 @@ const Image = styled('div')`
   border-radius: 16px;
   width: 100%;
 `;
-const ActionsContainer = styled('div')`
+const ActionsContainer$1 = styled('div')`
   padding: 8px 0;
   height: auto;
   font-size: 14px;
@@ -2018,7 +2070,7 @@ const GenericCard = ({
       children: title
     }), createComponent(BodyContainer, {
       children: children
-    }), createComponent(ActionsContainer, {
+    }), createComponent(ActionsContainer$1, {
       get children() {
         return createComponent(For, {
           each: actions,
@@ -2031,1025 +2083,11 @@ const GenericCard = ({
 
 });
 
-const _tmpl$$4 = template(`<label></label>`),
-      _tmpl$2$1$1 = template(`<h2></h2>`),
-      _tmpl$3$2 = template(`<p></p>`);
-const {
-  More: More$2
-} = Icons;
-
-const isValidUrl = _string => {
-  const matchPattern = /^(?:\w+:)?\/\/([^\s\.]+\.\S{2}|localhost[\:?\d]*)\S*$/;
-  return matchPattern.test(_string);
-};
-
-const StyledCard = styled('div')`
-	position: relative;
-	background: ${props => isValidUrl(props.background) ? `url(${props.background})` : props.background};
-	color: ${props => props.color};
-	height: ${props => props.small ? '240px' : '430px'};
-	background-size: cover;
-	width: 260px;
-	border-radius: 20px;
-	padding: 16px 20px;
-	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-`;
-const ActionsHeader = styled('div')`
-	top: 16px;
-	right: 20px;
-	position: absolute;
-	display: inline-flex;
-	justify-content: flex-end;
-
-	& svg {
-		cursor: pointer;
-	}
-`;
-const CardDetails = styled('div')`
-	position: absolute;
-	bottom: 16px;
-	left: 20px;
-	right: 20px;
-
-	label {
-		opacity: 0.8;
-	}
-`;
-const FillCard = ({
-  background = '#2C2738',
-  color = '#ffffff',
-  label,
-  title,
-  small = false,
-  children
-}) => createComponent(StyledCard, {
-  background: background,
-  color: color,
-  small: small,
-
-  get children() {
-    return [createComponent(ActionsHeader, {
-      get children() {
-        return createComponent(More$2, {
-          fill: color
-        });
-      }
-
-    }), createComponent(CardDetails, {
-      get children() {
-        return [(() => {
-          const _el$ = _tmpl$$4.cloneNode(true);
-
-          insert(_el$, label);
-
-          return _el$;
-        })(), (() => {
-          const _el$2 = _tmpl$2$1$1.cloneNode(true);
-
-          insert(_el$2, title);
-
-          return _el$2;
-        })(), createComponent(Show, {
-          get when() {
-            return Boolean(children);
-          },
-
-          get children() {
-            const _el$3 = _tmpl$3$2.cloneNode(true);
-
-            insert(_el$3, children);
-
-            return _el$3;
-          }
-
-        })];
-      }
-
-    })];
-  }
-
-});
-
-const Card = Object.assign({}, {
-  Fill: FillCard,
-  Generic: GenericCard
-});
-
-const arrowColorTypeMap = {
-  ['bright']: '#D5D6D7',
-  ['dark']: '#585364',
-  ['blueberry']: '#4874E9',
-  ['strawberry']: '#DF3468'
-};
-
-const getArrowColorByTypeMap = type => arrowColorTypeMap[type] ?? '#585364';
-
-const StyledBubble = styled('div')`
-	position: relative;
-	height: 50px;
-	min-width: 240px;
-	border-radius: 6px;
-	padding: 16px;
-	font-size: 14px;
-	box-sizing: border-box;
-	color: ${props => props.type === 'bright' ? props.theme.colors.secondary : props.theme.colors.bright};
-	background: ${props => props.theme.colors[props.type]};
-
-	&::before {
-		position: absolute;
-		z-index: -1;
-		content: ' ';
-		width: 0;
-		height: 0;
-		border-style: solid;
-	}
-
-	&[h-position="left"]::before {
-		left: 0;
-		border-width: 9px 0 9px 9px;
-		border-color: transparent transparent transparent ${props => getArrowColorByTypeMap(props.type)};
-	}
-
-	&[h-position="right"]::before {
-		right: 0;
-		border-width: 9px 9px 9px 0;
-		border-color: transparent ${props => getArrowColorByTypeMap(props.type)} transparent transparent;
-	}
-
-	&[v-position="top"]::before {
-		top: -8px;
-	}
-
-	&[v-position="bottom"]::before {
-		bottom: -8px;
-	}
-`;
-const ChatBubble = ({
-  type = 'blueberry',
-  placement = 'top-left',
-  children
-}) => createComponent(StyledBubble, {
-  type: type,
-  placement: placement,
-
-  get ["v-position"]() {
-    return placement.split('-')[0];
-  },
-
-  get ["h-position"]() {
-    return placement.split('-')[1];
-  },
-
-  children: children
-});
-
-const CounterContainer = styled('div')`
-	display: inline-flex;
-	align-items: center;
-	height: 52px;
-	background: ${props => props.disabled ? props.theme.colors.shade : props.theme.colors.bright};
-	border-radius: 6px;
-`;
-const ControlButton = styled('button')`
-	display: inline-flex;
-	justify-content: center;
-	align-items: center;
-	padding: 12px;
-	width: 60px;
-	background: transparent;
-	border: unset;
-	outline: unset;
-	height: 100%;
-	cursor: pointer;
-
-	${props => props.side === 'left' ? `
-			border-top-left-radius: 6px;
-			border-bottom-left-radius: 6px;
-		` : `
-			border-top-right-radius: 6px;
-			border-bottom-right-radius: 6px;
-		`}
-
-	&:active {
-		background: ${props => props.theme.colors.accent};
-
-		& > span > svg > path {
-			fill: ${props => props.theme.colors.bright};
-		}
-	}
-
-	&:disabled {
-		background: ${props => props.theme.colors.shade};
-
-		& > span > svg > path {
-			fill: ${props => props.theme.colors.secondary};
-		}
-	}
-`;
-const ValueInput = styled('input')`
-	width: 60px;
-	padding: 12px;
-	outline: unset;
-	border: unset;
-	text-align: center;
-	font-size: 16px;
-	height: 100%;
-	border-left: 1px solid ${props => props.theme.colors.shade};
-	border-right: 1px solid ${props => props.theme.colors.shade};
-	background: transparent;
-
-`;
-const Counter = ({
-  value = 0,
-  disabled,
-  maxValue = 999,
-  minValue = -999,
-  onInput,
-  ...rest
-}) => {
-  const [getValue, setValue] = createSignal(value);
-
-  const handleInput = e => {
-    //@ts-ignore
-    if (!/^(0|-*[1-9]+[0-9]*)$/.test(e?.target?.value)) {
-      //@ts-ignore
-      e.target.value = e.target.value.slice(0, -1);
-    } //@ts-ignore
-
-
-    setValue(Number(e.target.value) ?? 0);
-    onInput?.(e);
-  };
-
-  const incremenet = () => setValue(v => v + 1);
-
-  const decrement = () => setValue(v => v - 1);
-
-  return createComponent(CounterContainer, {
-    disabled: disabled,
-
-    get children() {
-      return [createComponent(ControlButton, {
-        onClick: decrement,
-        side: 'left',
-
-        get disabled() {
-          return disabled || getValue() === minValue;
-        },
-
-        get children() {
-          return createComponent(Icons.Minus, {});
-        }
-
-      }), createComponent(ValueInput, mergeProps({
-        get value() {
-          return getValue();
-        },
-
-        onInput: handleInput,
-        disabled: disabled
-      }, rest)), createComponent(ControlButton, {
-        onClick: incremenet,
-        side: 'right',
-
-        get disabled() {
-          return disabled || getValue() === maxValue;
-        },
-
-        get children() {
-          return createComponent(Icons.Plus, {});
-        }
-
-      })];
-    }
-
-  });
-};
-
-const InputContainer = styled('div')`
-	display: inline-flex;
-	justify-content: space-between;
-	align-items: center;
-	height: 52px;
-	outline: unset;
-	border-radius: 6px;
-	background: ${props => props.disabled ? props.theme.colors.shade : props.theme.colors.bright};
-	border: 1px solid ${props => props.theme.colors.shade};
-	font-size: 16px;
-	box-sizing: border-box;
-	gap: 16px;
-	padding: 0 16px;
-	min-width: 360px;
-
-	&:focus-within {
-		outline: none;
-		border: 2px solid ${props => props.theme.colors.accent};
-	}
-`;
-const StyledInput = styled('input')`
-	outline: unset;
-	background: transparent;
-	border: unset;
-	font-size: 16px;
-	margin: 16px 0;
-	width: 100%;
-
-	&::placeholder {
-		color: ${props => props.theme.colors.muted};
-	}
-
-	&:disabled, &:disabled::placeholder {
-		color: ${props => props.theme.colors.secondary};
-	}
-`;
-const Input = ({
-  icon,
-  disabled,
-  ...rest
-}) => createComponent(InputContainer, {
-  disabled: disabled,
-
-  get children() {
-    return [createComponent(StyledInput, mergeProps({
-      disabled: disabled
-    }, rest)), createComponent(Show, {
-      when: icon,
-      children: icon
-    })];
-  }
-
-});
-
-const StyledTextArea = styled('textarea')`
-	outline: unset;
-	background: ${props => props.theme.colors.bright};
-	border: 1px solid ${props => props.theme.colors.shade};
-	font-size: 16px;
-	padding: 16px;
-	border-radius: 6px;
-	height: fit-content;
-	min-width: 360px;
-
-	&:focus {
-		outline: unset;
-		border: 2px solid ${props => props.theme.colors.accent};
-	}
-
-	&::placeholder {
-		color: ${props => props.theme.colors.muted};
-	}
-
-	&:disabled, &:disabled::placeholder {
-		color: ${props => props.theme.colors.secondary};
-		background: ${props => props.theme.colors.shade};
-	}
-`;
-const TextArea = ({
-  rows = 4,
-  ...rest
-}) => createComponent(StyledTextArea, mergeProps({
-  rows: rows
-}, rest));
-
-const StyledSpace = styled('div')`
-	display: inline-flex;
-  gap: 8px;
-`;
-const Space = ({
-  children
-}) => createComponent(StyledSpace, {
-  children: children
-});
-
-const {
-  Cross: Cross$3
-} = Icons;
-const ModalWrap = styled('div')`
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 3;
-  overflow: auto;
-  outline: 0;
-	background: rgba(113, 145, 180, 0.6);
-`;
-const ModalDialog = styled('div')`
-	box-sizing: border-box;
-  background: ${props => props.theme.colors.bright};
-  color: ${props => props.theme.colors.primary};
-  font-size: 14px;
-  line-height: 1.5;
-  position: relative;
-  top: 100px;
-  z-index: 4;
-  max-width: 500px;
-  width: auto;
-  margin: 0 auto;
-  border-radius: 16px;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  padding: 16px 24px;
-`;
-const ModalHeader = styled('div')`
-	display: inline-flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-
-	& svg {
-		cursor: pointer;
-	}
-`;
-const ModalBody = styled('div')`
-	padding: 8px 0;
-`;
-const ModalActions = styled('div')`
-	width: 100%;
-  display: inline-flex;
-  justify-content: flex-end;
-  align-items: center;
-`;
-const Modal = ({
-  visible,
-  title,
-  onCancel,
-  onOk,
-  children
-}) => createComponent(Show, {
-  get when() {
-    return visible();
-  },
-
-  get children() {
-    return createComponent(ModalWrap, {
-      get children() {
-        return createComponent(ModalDialog, {
-          get children() {
-            return [createComponent(ModalHeader, {
-              get children() {
-                return [createComponent(Typography.Heading, {
-                  size: 5,
-                  weight: 'bold',
-                  children: title
-                }), createComponent(Cross$3, {
-                  onClick: onCancel
-                })];
-              }
-
-            }), createComponent(ModalBody, {
-              children: children
-            }), createComponent(ModalActions, {
-              get children() {
-                return createComponent(Space, {
-                  get children() {
-                    return [createComponent(Button, {
-                      variant: "ghost",
-                      onClick: onCancel,
-                      children: "Cancel"
-                    }), createComponent(Button, {
-                      onClick: onOk,
-                      children: "Action"
-                    })];
-                  }
-
-                });
-              }
-
-            })];
-          }
-
-        });
-      }
-
-    });
-  }
-
-});
-
-const _tmpl$$3$1 = template(`<div class="progress"></div>`);
-const StyledProgress = styled('div')`
-	width: 100%;
-	height: 8px;
-	background: ${props => props.theme.colors.shade};
-	border-radius: 2px;
-
-	.progress {
-		background: ${props => props.theme.colors[props.type]};
-		width: ${props => `${props.percent}%`};
-		height: 8px;
-		border-radius: 2px;
-
-		${props => props.percent ? `
-			width: ${props.percent}%;
-		` : ''}
-		
-		${props => props.loading ? `
-			animation-name: loading;
-  		animation-duration: 4s;
-			animation-iteration-count: infinite;
-		` : ''};
-	}
-
-	@keyframes loading {
-		from {width: 0%;}
-		to {width: 100%;}
-	}
-`;
-const Progress = ({
-  type = 'accent',
-  percent,
-  loading = false
-}) => createComponent(StyledProgress, {
-  type: type,
-  percent: percent,
-  loading: loading,
-
-  get children() {
-    return _tmpl$$3$1.cloneNode(true);
-  }
-
-});
-
-const theme = {
-  colors: {
-    accent: "#0880AE",
-    warning: "#F2AC57",
-    success: "#14A38B",
-    error: "#FF7171",
-    primary: "#2C2738",
-    secondary: "#756F86",
-    muted: "#7C9CBF",
-    bright: "#FFFFFF",
-    shade: "#DBE2EA",
-    tint: "#EBF4F8",
-    dark: "#2C2738",
-    strawberry: "#FF5689",
-    blueberry: "#6F96FF"
-  }
-};
-
-const generateTypes = () => {
-  const tooltipTypes = ["bright", "dark", "accent", "error", "warning", "success"];
-  let types = "";
-  for (const type of tooltipTypes) {
-    types += `
-		.tippy-box[data-theme~=${type}] {
-			background-color: ${theme.colors[type]};
-		}
-
-		.tippy-box[data-theme~=${type}][data-placement^="bottom"] > .tippy-arrow {
-			background-image: url("data:image/svg+xml,%3Csvg width='10' height='5' viewBox='0 0 10 5' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M10 5H0L3.58579 1.41421C4.36684 0.633163 5.63317 0.633165 6.41421 1.41421L10 5Z' fill='%23${theme.colors[type].split("#")[1]}'/%3E%3C/svg%3E");
-		}
-	
-		.tippy-box[data-theme~=${type}][data-placement^="top"] > .tippy-arrow {
-			background-image: url("data:image/svg+xml,%3Csvg width='10' height='5' viewBox='0 0 10 5' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M10 0L6.41421 3.58579C5.63316 4.36684 4.36684 4.36684 3.58579 3.58579L0 0H10Z' fill='%23${theme.colors[type].split("#")[1]}'/%3E%3C/svg%3E");
-		}
-
-		.tippy-box[data-theme~=${type}][data-placement^="left"] > .tippy-arrow {
-			background-image: url("data:image/svg+xml,%3Csvg width='5' height='10' viewBox='0 0 5 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 0L3.58579 3.58579C4.36684 4.36684 4.36684 5.63316 3.58579 6.41421L0 10V0Z' fill='%23${theme.colors[type].split("#")[1]}'/%3E%3C/svg%3E");
-		}
-
-		.tippy-box[data-theme~=${type}][data-placement^="right"] > .tippy-arrow {
-			background-image: url("data:image/svg+xml,%3Csvg width='5' height='10' viewBox='0 0 5 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M5 0V10L1.41421 6.41421C0.633163 5.63316 0.633165 4.36683 1.41421 3.58579L5 0Z' fill='%23${theme.colors[type].split("#")[1]}'/%3E%3C/svg%3E");
-		}
-		`;
-  }
-  return types;
-};
-const TooltipStyle = `
-	.tippy-box[data-animation="fade"][data-state="hidden"] {
-		opacity: 0;
-	}
-
-	[data-tippy-root] {
-		max-width: calc(100vw - 10px);
-	}
-
-	.tippy-box {
-		position: relative;
-		background-color: #333;
-		color: #fff;
-		border-radius: 4px;
-		font-size: 14px;
-		line-height: 1.4;
-		white-space: normal;
-		outline: 0;
-		transition-property: transform, visibility, opacity;
-	}
-
-	.tippy-box[data-placement^="top"] > .tippy-arrow {
-		width: 10px;
-		height: 5px;
-		bottom: -5px;
-	}
-
-	.tippy-box[data-placement^="bottom"] > .tippy-arrow {
-		width: 10px;
-		height: 5px;
-		top: -5px;
-	}
-
-	.tippy-box[data-placement^="left"] > .tippy-arrow {
-		right: -5px;
-		width: 5px;
-		height: 10px;
-	}
-
-	.tippy-box[data-placement^="right"] > .tippy-arrow {
-		left: -5px;
-		width: 5px;
-		height: 10px;
-	}
-
-	.tippy-box[data-inertia][data-state="visible"] {
-		transition-timing-function: cubic-bezier(0.54, 1.5, 0.38, 1.11);
-	}
-
-	.tippy-box[data-theme~='bright'] {
-		color: ${theme.colors.dark};
-	}
-
-	.tippy-content {
-		position: relative;
-		padding: 7px 10px;
-		z-index: 1;
-	}
-
-	${generateTypes()}
-`;
-
-const GlobalStyle = createGlobalStyles`
-	@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans');
-
-	*,
-	*::after,
-	*::before {
-		box-sizing: border-box;
-		margin: 0;
-		padding: 0;
-	}
-	
-	* {
-		font-family: 'IBM Plex Sans', sans-serif;
-	}
-
-	body {
-		background-color: #ebf4f8;
-	}
-
-	${TooltipStyle}	
-`;
-
-const RevKitTheme = props => createComponent(ThemeProvider, {
-  theme: theme,
-
-  get children() {
-    return [createComponent(GlobalStyle, {}), memo(() => props.children)];
-  }
-
-});
-
-const _tmpl$$2$1 = template(`<div class="select"></div>`);
-const {
-  ChevronLeft: ChevronLeft$2,
-  ChevronDown: ChevronDown$2
-} = Icons;
-const SelectContainer = styled('div')`
-	position: relative;
-	user-select: none;
-	outline: none;
-	width: auto;
-	height: auto;
-
-	& .select {
-		background: ${props => props.theme.colors.bright};
-    border: 1px solid ${props => props.theme.colors.shade};
-		border-radius: 6px;
-    display: inline-flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0;
-		min-width: 360px;
-    height: 52px;
-    padding: 5px;
-    box-sizing: border-box;
-		padding: 16px;
-
-		& span svg path {
-			fill: ${props => props.theme.colors.accent};
-		}
-
-		&.selected {
-			border: 2px solid ${props => props.theme.colors.accent};
-		}
-
-		&.disabled {
-			background: ${props => props.theme.colors.shade};
-			color: ${props => props.theme.colors.secondary};
-
-			& span svg path {
-				fill: ${props => props.theme.colors.secondary};
-			}
-		}
-	}
-`;
-const SelectPlaceholder = styled('span')`
-	color: ${props => props.theme.colors.muted};
-`;
-const OptionsList = styled('div')`
-	position: absolute;
-	top: 60px;
-	display: flex;
-	flex-direction: column;
-	min-width: 360px;
-	list-style-type: none;
-	padding: 12px 0;
-	border-radius: 6px;
-	background: ${props => props.theme.colors.bright};
-	z-index: 3;
-`;
-const OptionListItem = styled('div')`
-	height: 44px;
-	text-align: left;
-	padding: 12px 15px;
-	background: ${props => props.selected ? props.theme.colors.tint : props.theme.colors.bright};
-
-	&:hover, &.selected  {
-		background: ${props => props.theme.colors.tint};
-	}
-
-	${props => props.disabled ? `
-		background: ${props.theme.colors.shade};
-		color: ${props.theme.colors.secondary};
-		pointer-events: none;
-
-		&:hover {
-			background: ${props.theme.colors.shade};
-		}
-	` : ''}
-`;
-
 const clickOutside = (el, accessor) => {
-  const onClick = e => !el.contains(e.target) && accessor()?.();
-
+  const onClick = (e) => !el.contains(e.target) && accessor()?.();
   document.body.addEventListener("click", onClick);
   onCleanup(() => document.body.removeEventListener("click", onClick));
 };
-
-const Select = ({
-  options = [],
-  placeholder,
-  defaultOption,
-  disabled = false,
-  onSelect,
-  onChange,
-  onBlur
-}) => {
-  const [getOpen, setOpen] = createSignal(false);
-  const [getSelectedOption, setSelectedOption] = createSignal(defaultOption);
-
-  const handleOptionSelect = option => {
-    setSelectedOption(option);
-    onSelect?.(option);
-    onChange?.(option);
-    setOpen(false);
-  };
-
-  const handleClick = () => {
-    if (disabled) return;
-    setOpen(v => !v);
-  };
-
-  return createComponent(SelectContainer, {
-    get children() {
-      return [(() => {
-        const _el$ = _tmpl$$2$1.cloneNode(true);
-
-        clickOutside(_el$, () => () => {
-          setOpen(false);
-          onBlur?.(getSelectedOption());
-        });
-        _el$.$$click = handleClick;
-
-        _el$.classList.toggle("disabled", disabled);
-
-        insert(_el$, createComponent(Show, {
-          get when() {
-            return getSelectedOption();
-          },
-
-          fallback: () => createComponent(SelectPlaceholder, {
-            children: placeholder
-          }),
-
-          get children() {
-            return options.find(item => item.value === getSelectedOption())?.label;
-          }
-
-        }), null);
-
-        insert(_el$, createComponent(Show, {
-          get when() {
-            return getOpen();
-          },
-
-          fallback: () => createComponent(ChevronLeft$2, {}),
-
-          get children() {
-            return createComponent(ChevronDown$2, {});
-          }
-
-        }), null);
-
-        createRenderEffect(() => _el$.classList.toggle("selected", getOpen()));
-
-        return _el$;
-      })(), createComponent(Show, {
-        get when() {
-          return getOpen();
-        },
-
-        get children() {
-          return createComponent(OptionsList, {
-            get children() {
-              return createComponent(For, {
-                each: options,
-                children: option => createComponent(OptionListItem, {
-                  onClick: () => {
-                    if (option.disabled) return;
-                    handleOptionSelect(option.value);
-                  },
-
-                  get selected() {
-                    return option.value === getSelectedOption();
-                  },
-
-                  get disabled() {
-                    return option.disabled;
-                  },
-
-                  get children() {
-                    return option.label;
-                  }
-
-                })
-              });
-            }
-
-          });
-        }
-
-      })];
-    }
-
-  });
-};
-
-delegateEvents(["click"]);
-
-const _tmpl$$1$1 = template(`<input type="checkbox">`),
-      _tmpl$2$3 = template(`<div class="slider"><div class="toggle"></div></div>`);
-const StyledButton = styled('button')`
-	background: unset;
-	border: unset;
-	outline: unset;
-
-	input {
-		height: 0;
-		width: 0;
-		opacity: 0;
-		z-index: -2;
-	}
-
-	.slider {
-		cursor: pointer;
-		width: 52px;
-		height: 30px;
-		border-radius: 34px;
-		border-color: #ccc;
-		background-color: ${props => props.theme.colors.bright};
-		border: 1px solid ${props => props.theme.colors.shade};
-		display: inline-flex;
-		align-items: center;
-		padding: 0 4px;
-  	transition: .4s;
-	}
-
-	.slider .toggle {
-		height: 20px;
-		width: 20px;
-		border-radius: 50%;
-		background-color: ${props => props.theme.colors.bright};
-		border: 1px solid ${props => props.theme.colors.shade};
-  	transition: .4s;
-	}
-
-	input:checked + .slider {
-		background-color: ${props => props.theme.colors.accent};
-  	transition: .4s;
-	}
-
-	input:disabled + .slider {
-		background-color: ${props => props.theme.colors.shade};
-	}
-
-	input:disabled + .slider .toggle {
-		background-color: ${props => props.theme.colors.shade};
-		border: 1px solid ${props => props.theme.colors.bright};
-	}
-
-	input:checked:disabled + .slider .toggle {
-		background-color: ${props => props.theme.colors.bright};
-	}
-
-	input:checked + .slider .toggle {
-		transform: translateX(22px);
-  	transition: .4s;
-	}
-`;
-const Switch = ({
-  disabled = false,
-  checked = false,
-  ...rest
-}) => {
-  const [getChecked, setChecked] = createSignal(checked);
-
-  const updateChecked = () => {
-    if (disabled) return;
-    setChecked(v => !v);
-  };
-
-  return createComponent(StyledButton, {
-    onClick: updateChecked,
-
-    get children() {
-      return [(() => {
-        const _el$ = _tmpl$$1$1.cloneNode(true);
-
-        _el$.disabled = disabled;
-
-        spread(_el$, rest, false, false);
-
-        createRenderEffect(() => _el$.checked = getChecked());
-
-        return _el$;
-      })(), _tmpl$2$3.cloneNode(true)];
-    }
-
-  });
-};
-
-const StyledSpinner = styled('div')`
-	border: 6px solid #f3f3f3;
-  border-radius: 50%;
-  border-top: 6px solid ${props => props.theme.colors[props.type]};
-  border-bottom: 6px solid ${props => props.theme.colors[props.type]};
-  border-left: 6px solid ${props => props.theme.colors[props.type]};
-  width: 44px;
-  height: 44px;
-  -webkit-animation: spin 2s linear infinite;
-  animation: spin 2s linear infinite;
-
-@-webkit-keyframes spin {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-`;
-const Spinner = ({
-  type = 'accent'
-}) => {
-  return createComponent(StyledSpinner, {
-    type: type
-  });
-};
-
-const StyledTag = styled('span')`
-	display: inline-flex;
-	font-size: 14px;
-	padding: 8px;
-	align-items: center;
-	justify-content: space-around;
-	min-width: 50px;
-	background: ${props => props.theme.colors[props.type]};
-	color: ${props => props.theme.colors[props.color]};
-	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-	border-radius: 17px;
-`;
-const Tag = ({
-  type = 'accent',
-  color = 'bright',
-  children
-}) => createComponent(StyledTag, {
-  type: type,
-  color: color,
-  children: children
-});
 
 var top = 'top';
 var bottom = 'bottom';
@@ -6352,6 +5390,1105 @@ const tippyTooltip = (el, tooltipProps) => {
   });
 };
 
+const _tmpl$$4 = template(`<span></span>`),
+      _tmpl$2$1$1 = template(`<label></label>`),
+      _tmpl$3$2 = template(`<h2></h2>`),
+      _tmpl$4$2 = template(`<p></p>`);
+const {
+  More: More$2
+} = Icons;
+
+const isValidUrl = _string => {
+  const matchPattern = /^(?:\w+:)?\/\/([^\s\.]+\.\S{2}|localhost[\:?\d]*)\S*$/;
+  return matchPattern.test(_string);
+};
+
+const StyledCard = styled('div')`
+	position: relative;
+	background: ${props => isValidUrl(props.background) ? `url(${props.background})` : props.background};
+	color: ${props => props.color};
+	height: ${props => props.small ? '240px' : '430px'};
+	background-size: cover;
+	width: 260px;
+	border-radius: 20px;
+	padding: 16px 20px;
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+`;
+const ActionsHeader = styled('div')`
+	top: 16px;
+	right: 20px;
+	position: absolute;
+	display: inline-flex;
+	justify-content: flex-end;
+
+	& svg {
+		cursor: pointer;
+	}
+`;
+const CardDetails = styled('div')`
+	position: absolute;
+	bottom: 16px;
+	left: 20px;
+	right: 20px;
+
+	label {
+		opacity: 0.8;
+	}
+`;
+const ActionsContainer = styled('div')`
+	position: absolute;
+	top: 16px;
+	right: 45px;
+	border-radius: 4px;
+	padding: 10px;
+	background: ${props => props.theme.colors.bright};
+	width: 70%;
+	color: ${props => props.theme.colors.dark};
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+
+	&::before {
+		position: absolute;
+    top: 5px;
+    right: -5px;
+    height: 10px;
+    width: 5px;
+		content: ' ';
+		background-image: url("data:image/svg+xml,%3Csvg width='5' height='10' viewBox='0 0 5 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 0L3.58579 3.58579C4.36684 4.36684 4.36684 5.63316 3.58579 6.41421L0 10V0Z' fill='%23fff'/%3E%3C/svg%3E");
+	}
+`;
+const ActionButton = styled('button')`
+	outline: none;
+	border: none;
+	width: 100%;
+	text-align: left;
+	background: ${props => props.theme.colors.bright};
+	color: ${props => props.theme.colors.dark};
+	font-size: 16px;
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+
+	&:hover {
+		text-decoration: underline;
+	}
+`;
+const FillCard = ({
+  background = '#2C2738',
+  color = '#ffffff',
+  label,
+  title,
+  small = false,
+  actions = [],
+  children
+}) => {
+  const [getShowActions, setShowActions] = createSignal(false);
+  return createComponent(StyledCard, {
+    background: background,
+    color: color,
+    small: small,
+
+    get children() {
+      return [createComponent(Show, {
+        get when() {
+          return actions.length > 0;
+        },
+
+        get children() {
+          return [createComponent(ActionsHeader, {
+            get children() {
+              const _el$ = _tmpl$$4.cloneNode(true);
+
+              clickOutside(_el$, () => () => setShowActions(false));
+
+              insert(_el$, createComponent(More$2, {
+                fill: color,
+                onClick: () => setShowActions(v => !v)
+              }));
+
+              return _el$;
+            }
+
+          }), createComponent(Show, {
+            get when() {
+              return getShowActions();
+            },
+
+            get children() {
+              return createComponent(ActionsContainer, {
+                get children() {
+                  return createComponent(For, {
+                    each: actions,
+                    children: action => createComponent(ActionButton, {
+                      get onClick() {
+                        return action.onClick;
+                      },
+
+                      get children() {
+                        return [memo(() => action.icon), memo(() => action.label)];
+                      }
+
+                    })
+                  });
+                }
+
+              });
+            }
+
+          })];
+        }
+
+      }), createComponent(CardDetails, {
+        get children() {
+          return [(() => {
+            const _el$2 = _tmpl$2$1$1.cloneNode(true);
+
+            insert(_el$2, label);
+
+            return _el$2;
+          })(), (() => {
+            const _el$3 = _tmpl$3$2.cloneNode(true);
+
+            insert(_el$3, title);
+
+            return _el$3;
+          })(), createComponent(Show, {
+            get when() {
+              return Boolean(children);
+            },
+
+            get children() {
+              const _el$4 = _tmpl$4$2.cloneNode(true);
+
+              insert(_el$4, children);
+
+              return _el$4;
+            }
+
+          })];
+        }
+
+      })];
+    }
+
+  });
+};
+
+const Card = Object.assign({}, {
+  Fill: FillCard,
+  Generic: GenericCard
+});
+
+const arrowColorTypeMap = {
+  ['bright']: '#D5D6D7',
+  ['dark']: '#585364',
+  ['blueberry']: '#4874E9',
+  ['strawberry']: '#DF3468'
+};
+
+const getArrowColorByTypeMap = type => arrowColorTypeMap[type] ?? '#585364';
+
+const StyledBubble = styled('div')`
+	position: relative;
+	height: 50px;
+	min-width: 240px;
+	border-radius: 6px;
+	padding: 16px;
+	font-size: 14px;
+	box-sizing: border-box;
+	color: ${props => props.type === 'bright' ? props.theme.colors.secondary : props.theme.colors.bright};
+	background: ${props => props.theme.colors[props.type]};
+
+	&::before {
+		position: absolute;
+		z-index: -1;
+		content: ' ';
+		width: 0;
+		height: 0;
+		border-style: solid;
+	}
+
+	&[h-position="left"]::before {
+		left: 0;
+		border-width: 9px 0 9px 9px;
+		border-color: transparent transparent transparent ${props => getArrowColorByTypeMap(props.type)};
+	}
+
+	&[h-position="right"]::before {
+		right: 0;
+		border-width: 9px 9px 9px 0;
+		border-color: transparent ${props => getArrowColorByTypeMap(props.type)} transparent transparent;
+	}
+
+	&[v-position="top"]::before {
+		top: -8px;
+	}
+
+	&[v-position="bottom"]::before {
+		bottom: -8px;
+	}
+`;
+const ChatBubble = ({
+  type = 'blueberry',
+  placement = 'top-left',
+  children
+}) => createComponent(StyledBubble, {
+  type: type,
+  placement: placement,
+
+  get ["v-position"]() {
+    return placement.split('-')[0];
+  },
+
+  get ["h-position"]() {
+    return placement.split('-')[1];
+  },
+
+  children: children
+});
+
+const CounterContainer = styled('div')`
+	display: inline-flex;
+	align-items: center;
+	height: 52px;
+	background: ${props => props.disabled ? props.theme.colors.shade : props.theme.colors.bright};
+	border-radius: 6px;
+`;
+const ControlButton = styled('button')`
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	padding: 12px;
+	width: 60px;
+	background: transparent;
+	border: unset;
+	outline: unset;
+	height: 100%;
+	cursor: pointer;
+
+	${props => props.side === 'left' ? `
+			border-top-left-radius: 6px;
+			border-bottom-left-radius: 6px;
+		` : `
+			border-top-right-radius: 6px;
+			border-bottom-right-radius: 6px;
+		`}
+
+	&:active {
+		background: ${props => props.theme.colors.accent};
+
+		& > span > svg > path {
+			fill: ${props => props.theme.colors.bright};
+		}
+	}
+
+	&:disabled {
+		background: ${props => props.theme.colors.shade};
+
+		& > span > svg > path {
+			fill: ${props => props.theme.colors.secondary};
+		}
+	}
+`;
+const ValueInput = styled('input')`
+	width: 60px;
+	padding: 12px;
+	outline: unset;
+	border: unset;
+	text-align: center;
+	font-size: 16px;
+	height: 100%;
+	border-left: 1px solid ${props => props.theme.colors.shade};
+	border-right: 1px solid ${props => props.theme.colors.shade};
+	background: transparent;
+
+`;
+const Counter = ({
+  value = 0,
+  disabled,
+  maxValue = 999,
+  minValue = -999,
+  onInput,
+  ...rest
+}) => {
+  const [getValue, setValue] = createSignal(value);
+
+  const handleInput = e => {
+    //@ts-ignore
+    if (!/^(0|-*[1-9]+[0-9]*)$/.test(e?.target?.value)) {
+      //@ts-ignore
+      e.target.value = e.target.value.slice(0, -1);
+    } //@ts-ignore
+
+
+    setValue(Number(e.target.value) ?? 0);
+    onInput?.(e);
+  };
+
+  const incremenet = () => setValue(v => v + 1);
+
+  const decrement = () => setValue(v => v - 1);
+
+  return createComponent(CounterContainer, {
+    disabled: disabled,
+
+    get children() {
+      return [createComponent(ControlButton, {
+        onClick: decrement,
+        side: 'left',
+
+        get disabled() {
+          return disabled || getValue() === minValue;
+        },
+
+        get children() {
+          return createComponent(Icons.Minus, {});
+        }
+
+      }), createComponent(ValueInput, mergeProps({
+        get value() {
+          return getValue();
+        },
+
+        onInput: handleInput,
+        disabled: disabled
+      }, rest)), createComponent(ControlButton, {
+        onClick: incremenet,
+        side: 'right',
+
+        get disabled() {
+          return disabled || getValue() === maxValue;
+        },
+
+        get children() {
+          return createComponent(Icons.Plus, {});
+        }
+
+      })];
+    }
+
+  });
+};
+
+const InputContainer = styled('div')`
+	display: inline-flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 52px;
+	outline: unset;
+	border-radius: 6px;
+	background: ${props => props.disabled ? props.theme.colors.shade : props.theme.colors.bright};
+	border: 1px solid ${props => props.theme.colors.shade};
+	font-size: 16px;
+	box-sizing: border-box;
+	gap: 16px;
+	padding: 0 16px;
+	min-width: 360px;
+
+	&:focus-within {
+		outline: none;
+		border: 2px solid ${props => props.theme.colors.accent};
+	}
+`;
+const StyledInput = styled('input')`
+	outline: unset;
+	background: transparent;
+	border: unset;
+	font-size: 16px;
+	margin: 16px 0;
+	width: 100%;
+
+	&::placeholder {
+		color: ${props => props.theme.colors.muted};
+	}
+
+	&:disabled, &:disabled::placeholder {
+		color: ${props => props.theme.colors.secondary};
+	}
+`;
+const Input = ({
+  icon,
+  disabled,
+  ...rest
+}) => createComponent(InputContainer, {
+  disabled: disabled,
+
+  get children() {
+    return [createComponent(StyledInput, mergeProps({
+      disabled: disabled
+    }, rest)), createComponent(Show, {
+      when: icon,
+      children: icon
+    })];
+  }
+
+});
+
+const StyledTextArea = styled('textarea')`
+	outline: unset;
+	background: ${props => props.theme.colors.bright};
+	border: 1px solid ${props => props.theme.colors.shade};
+	font-size: 16px;
+	padding: 16px;
+	border-radius: 6px;
+	height: fit-content;
+	min-width: 360px;
+
+	&:focus {
+		outline: unset;
+		border: 2px solid ${props => props.theme.colors.accent};
+	}
+
+	&::placeholder {
+		color: ${props => props.theme.colors.muted};
+	}
+
+	&:disabled, &:disabled::placeholder {
+		color: ${props => props.theme.colors.secondary};
+		background: ${props => props.theme.colors.shade};
+	}
+`;
+const TextArea = ({
+  rows = 4,
+  ...rest
+}) => createComponent(StyledTextArea, mergeProps({
+  rows: rows
+}, rest));
+
+const StyledSpace = styled('div')`
+	display: inline-flex;
+  gap: 8px;
+`;
+const Space = ({
+  children
+}) => createComponent(StyledSpace, {
+  children: children
+});
+
+const {
+  Cross: Cross$3
+} = Icons;
+const ModalWrap = styled('div')`
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  overflow: auto;
+  outline: 0;
+	background: rgba(113, 145, 180, 0.6);
+`;
+const ModalDialog = styled('div')`
+	box-sizing: border-box;
+  background: ${props => props.theme.colors.bright};
+  color: ${props => props.theme.colors.primary};
+  font-size: 14px;
+  line-height: 1.5;
+  position: relative;
+  top: 100px;
+  z-index: 4;
+  max-width: 500px;
+  width: auto;
+  margin: 0 auto;
+  border-radius: 16px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 16px 24px;
+`;
+const ModalHeader = styled('div')`
+	display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+	& svg {
+		cursor: pointer;
+	}
+`;
+const ModalBody = styled('div')`
+	padding: 8px 0;
+`;
+const ModalActions = styled('div')`
+	width: 100%;
+  display: inline-flex;
+  justify-content: flex-end;
+  align-items: center;
+`;
+const Modal = ({
+  visible,
+  title,
+  onCancel,
+  onOk,
+  children
+}) => createComponent(Show, {
+  get when() {
+    return visible();
+  },
+
+  get children() {
+    return createComponent(ModalWrap, {
+      get children() {
+        return createComponent(ModalDialog, {
+          get children() {
+            return [createComponent(ModalHeader, {
+              get children() {
+                return [createComponent(Typography.Heading, {
+                  size: 5,
+                  weight: 'bold',
+                  children: title
+                }), createComponent(Cross$3, {
+                  onClick: onCancel
+                })];
+              }
+
+            }), createComponent(ModalBody, {
+              children: children
+            }), createComponent(ModalActions, {
+              get children() {
+                return createComponent(Space, {
+                  get children() {
+                    return [createComponent(Button, {
+                      variant: "ghost",
+                      onClick: onCancel,
+                      children: "Cancel"
+                    }), createComponent(Button, {
+                      onClick: onOk,
+                      children: "Action"
+                    })];
+                  }
+
+                });
+              }
+
+            })];
+          }
+
+        });
+      }
+
+    });
+  }
+
+});
+
+const _tmpl$$3$1 = template(`<div class="progress"></div>`);
+const StyledProgress = styled('div')`
+	width: 100%;
+	height: 8px;
+	background: ${props => props.theme.colors.shade};
+	border-radius: 2px;
+
+	.progress {
+		background: ${props => props.theme.colors[props.type]};
+		width: ${props => `${props.percent}%`};
+		height: 8px;
+		border-radius: 2px;
+
+		${props => props.percent ? `
+			width: ${props.percent}%;
+		` : ''}
+		
+		${props => props.loading ? `
+			animation-name: loading;
+  		animation-duration: 4s;
+			animation-iteration-count: infinite;
+		` : ''};
+	}
+
+	@keyframes loading {
+		from {width: 0%;}
+		to {width: 100%;}
+	}
+`;
+const Progress = ({
+  type = 'accent',
+  percent,
+  loading = false
+}) => createComponent(StyledProgress, {
+  type: type,
+  percent: percent,
+  loading: loading,
+
+  get children() {
+    return _tmpl$$3$1.cloneNode(true);
+  }
+
+});
+
+const theme = {
+  colors: {
+    accent: "#0880AE",
+    warning: "#F2AC57",
+    success: "#14A38B",
+    error: "#FF7171",
+    primary: "#2C2738",
+    secondary: "#756F86",
+    muted: "#7C9CBF",
+    bright: "#FFFFFF",
+    shade: "#DBE2EA",
+    tint: "#EBF4F8",
+    dark: "#2C2738",
+    strawberry: "#FF5689",
+    blueberry: "#6F96FF"
+  }
+};
+
+const generateTypes = () => {
+  const tooltipTypes = ["bright", "dark", "accent", "error", "warning", "success"];
+  let types = "";
+  for (const type of tooltipTypes) {
+    types += `
+		.tippy-box[data-theme~=${type}] {
+			background-color: ${theme.colors[type]};
+		}
+
+		.tippy-box[data-theme~=${type}][data-placement^="bottom"] > .tippy-arrow {
+			background-image: url("data:image/svg+xml,%3Csvg width='10' height='5' viewBox='0 0 10 5' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M10 5H0L3.58579 1.41421C4.36684 0.633163 5.63317 0.633165 6.41421 1.41421L10 5Z' fill='%23${theme.colors[type].split("#")[1]}'/%3E%3C/svg%3E");
+		}
+	
+		.tippy-box[data-theme~=${type}][data-placement^="top"] > .tippy-arrow {
+			background-image: url("data:image/svg+xml,%3Csvg width='10' height='5' viewBox='0 0 10 5' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M10 0L6.41421 3.58579C5.63316 4.36684 4.36684 4.36684 3.58579 3.58579L0 0H10Z' fill='%23${theme.colors[type].split("#")[1]}'/%3E%3C/svg%3E");
+		}
+
+		.tippy-box[data-theme~=${type}][data-placement^="left"] > .tippy-arrow {
+			background-image: url("data:image/svg+xml,%3Csvg width='5' height='10' viewBox='0 0 5 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 0L3.58579 3.58579C4.36684 4.36684 4.36684 5.63316 3.58579 6.41421L0 10V0Z' fill='%23${theme.colors[type].split("#")[1]}'/%3E%3C/svg%3E");
+		}
+
+		.tippy-box[data-theme~=${type}][data-placement^="right"] > .tippy-arrow {
+			background-image: url("data:image/svg+xml,%3Csvg width='5' height='10' viewBox='0 0 5 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M5 0V10L1.41421 6.41421C0.633163 5.63316 0.633165 4.36683 1.41421 3.58579L5 0Z' fill='%23${theme.colors[type].split("#")[1]}'/%3E%3C/svg%3E");
+		}
+		`;
+  }
+  return types;
+};
+const TooltipStyle = `
+	.tippy-box[data-animation="fade"][data-state="hidden"] {
+		opacity: 0;
+	}
+
+	[data-tippy-root] {
+		max-width: calc(100vw - 10px);
+	}
+
+	.tippy-box {
+		position: relative;
+		background-color: #333;
+		color: #fff;
+		border-radius: 4px;
+		font-size: 14px;
+		line-height: 1.4;
+		white-space: normal;
+		outline: 0;
+		transition-property: transform, visibility, opacity;
+	}
+
+	.tippy-box[data-placement^="top"] > .tippy-arrow {
+		width: 10px;
+		height: 5px;
+		bottom: -5px;
+	}
+
+	.tippy-box[data-placement^="bottom"] > .tippy-arrow {
+		width: 10px;
+		height: 5px;
+		top: -5px;
+	}
+
+	.tippy-box[data-placement^="left"] > .tippy-arrow {
+		right: -5px;
+		width: 5px;
+		height: 10px;
+	}
+
+	.tippy-box[data-placement^="right"] > .tippy-arrow {
+		left: -5px;
+		width: 5px;
+		height: 10px;
+	}
+
+	.tippy-box[data-inertia][data-state="visible"] {
+		transition-timing-function: cubic-bezier(0.54, 1.5, 0.38, 1.11);
+	}
+
+	.tippy-box[data-theme~='bright'] {
+		color: ${theme.colors.dark};
+	}
+
+	.tippy-content {
+		position: relative;
+		padding: 7px 10px;
+		z-index: 1;
+	}
+
+	${generateTypes()}
+`;
+
+const GlobalStyle = createGlobalStyles`
+	@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans');
+
+	*,
+	*::after,
+	*::before {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+	}
+	
+	* {
+		font-family: 'IBM Plex Sans', sans-serif;
+	}
+
+	body {
+		background-color: #ebf4f8;
+	}
+
+	${TooltipStyle}	
+`;
+
+const RevKitTheme = props => createComponent(ThemeProvider, {
+  theme: theme,
+
+  get children() {
+    return [createComponent(GlobalStyle, {}), memo(() => props.children)];
+  }
+
+});
+
+const _tmpl$$2$1 = template(`<div class="select"></div>`);
+const {
+  ChevronLeft: ChevronLeft$2,
+  ChevronDown: ChevronDown$2
+} = Icons;
+const SelectContainer = styled('div')`
+	position: relative;
+	user-select: none;
+	outline: none;
+	width: auto;
+	height: auto;
+
+	& .select {
+		background: ${props => props.theme.colors.bright};
+    border: 1px solid ${props => props.theme.colors.shade};
+		border-radius: 6px;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+		min-width: 360px;
+    height: 52px;
+    padding: 5px;
+    box-sizing: border-box;
+		padding: 16px;
+
+		& span svg path {
+			fill: ${props => props.theme.colors.accent};
+		}
+
+		&.selected {
+			border: 2px solid ${props => props.theme.colors.accent};
+		}
+
+		&.disabled {
+			background: ${props => props.theme.colors.shade};
+			color: ${props => props.theme.colors.secondary};
+
+			& span svg path {
+				fill: ${props => props.theme.colors.secondary};
+			}
+		}
+	}
+`;
+const SelectPlaceholder = styled('span')`
+	color: ${props => props.theme.colors.muted};
+`;
+const OptionsList = styled('div')`
+	position: absolute;
+	top: 60px;
+	display: flex;
+	flex-direction: column;
+	min-width: 360px;
+	list-style-type: none;
+	padding: 12px 0;
+	border-radius: 6px;
+	background: ${props => props.theme.colors.bright};
+	z-index: 3;
+`;
+const OptionListItem = styled('div')`
+	height: 44px;
+	text-align: left;
+	padding: 12px 15px;
+	background: ${props => props.selected ? props.theme.colors.tint : props.theme.colors.bright};
+
+	&:hover, &.selected  {
+		background: ${props => props.theme.colors.tint};
+	}
+
+	${props => props.disabled ? `
+		background: ${props.theme.colors.shade};
+		color: ${props.theme.colors.secondary};
+		pointer-events: none;
+
+		&:hover {
+			background: ${props.theme.colors.shade};
+		}
+	` : ''}
+`;
+const Select = ({
+  options = [],
+  placeholder,
+  defaultOption,
+  disabled = false,
+  onSelect,
+  onChange,
+  onBlur
+}) => {
+  const [getOpen, setOpen] = createSignal(false);
+  const [getSelectedOption, setSelectedOption] = createSignal(defaultOption);
+
+  const handleOptionSelect = option => {
+    setSelectedOption(option);
+    onSelect?.(option);
+    onChange?.(option);
+    setOpen(false);
+  };
+
+  const handleClick = () => {
+    if (disabled) return;
+    setOpen(v => !v);
+  };
+
+  return createComponent(SelectContainer, {
+    get children() {
+      return [(() => {
+        const _el$ = _tmpl$$2$1.cloneNode(true);
+
+        clickOutside(_el$, () => () => {
+          setOpen(false);
+          onBlur?.(getSelectedOption());
+        });
+        _el$.$$click = handleClick;
+
+        _el$.classList.toggle("disabled", disabled);
+
+        insert(_el$, createComponent(Show, {
+          get when() {
+            return getSelectedOption();
+          },
+
+          fallback: () => createComponent(SelectPlaceholder, {
+            children: placeholder
+          }),
+
+          get children() {
+            return options.find(item => item.value === getSelectedOption())?.label;
+          }
+
+        }), null);
+
+        insert(_el$, createComponent(Show, {
+          get when() {
+            return getOpen();
+          },
+
+          fallback: () => createComponent(ChevronLeft$2, {}),
+
+          get children() {
+            return createComponent(ChevronDown$2, {});
+          }
+
+        }), null);
+
+        createRenderEffect(() => _el$.classList.toggle("selected", getOpen()));
+
+        return _el$;
+      })(), createComponent(Show, {
+        get when() {
+          return getOpen();
+        },
+
+        get children() {
+          return createComponent(OptionsList, {
+            get children() {
+              return createComponent(For, {
+                each: options,
+                children: option => createComponent(OptionListItem, {
+                  onClick: () => {
+                    if (option.disabled) return;
+                    handleOptionSelect(option.value);
+                  },
+
+                  get selected() {
+                    return option.value === getSelectedOption();
+                  },
+
+                  get disabled() {
+                    return option.disabled;
+                  },
+
+                  get children() {
+                    return option.label;
+                  }
+
+                })
+              });
+            }
+
+          });
+        }
+
+      })];
+    }
+
+  });
+};
+
+delegateEvents(["click"]);
+
+const _tmpl$$1$1 = template(`<input type="checkbox">`),
+      _tmpl$2$3 = template(`<div class="slider"><div class="toggle"></div></div>`);
+const StyledButton = styled('button')`
+	background: unset;
+	border: unset;
+	outline: unset;
+
+	input {
+		height: 0;
+		width: 0;
+		opacity: 0;
+		z-index: -2;
+	}
+
+	.slider {
+		cursor: pointer;
+		width: 52px;
+		height: 30px;
+		border-radius: 34px;
+		border-color: #ccc;
+		background-color: ${props => props.theme.colors.bright};
+		border: 1px solid ${props => props.theme.colors.shade};
+		display: inline-flex;
+		align-items: center;
+		padding: 0 4px;
+  	transition: .4s;
+	}
+
+	.slider .toggle {
+		height: 20px;
+		width: 20px;
+		border-radius: 50%;
+		background-color: ${props => props.theme.colors.bright};
+		border: 1px solid ${props => props.theme.colors.shade};
+  	transition: .4s;
+	}
+
+	input:checked + .slider {
+		background-color: ${props => props.theme.colors.accent};
+  	transition: .4s;
+	}
+
+	input:disabled + .slider {
+		background-color: ${props => props.theme.colors.shade};
+	}
+
+	input:disabled + .slider .toggle {
+		background-color: ${props => props.theme.colors.shade};
+		border: 1px solid ${props => props.theme.colors.bright};
+	}
+
+	input:checked:disabled + .slider .toggle {
+		background-color: ${props => props.theme.colors.bright};
+	}
+
+	input:checked + .slider .toggle {
+		transform: translateX(22px);
+  	transition: .4s;
+	}
+`;
+const Switch = ({
+  disabled = false,
+  checked = false,
+  ...rest
+}) => {
+  const [getChecked, setChecked] = createSignal(checked);
+
+  const updateChecked = () => {
+    if (disabled) return;
+    setChecked(v => !v);
+  };
+
+  return createComponent(StyledButton, {
+    onClick: updateChecked,
+
+    get children() {
+      return [(() => {
+        const _el$ = _tmpl$$1$1.cloneNode(true);
+
+        _el$.disabled = disabled;
+
+        spread(_el$, rest, false, false);
+
+        createRenderEffect(() => _el$.checked = getChecked());
+
+        return _el$;
+      })(), _tmpl$2$3.cloneNode(true)];
+    }
+
+  });
+};
+
+const StyledSpinner = styled('div')`
+	border: 6px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 6px solid ${props => props.theme.colors[props.type]};
+  border-bottom: 6px solid ${props => props.theme.colors[props.type]};
+  border-left: 6px solid ${props => props.theme.colors[props.type]};
+  width: 44px;
+  height: 44px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+`;
+const Spinner = ({
+  type = 'accent'
+}) => {
+  return createComponent(StyledSpinner, {
+    type: type
+  });
+};
+
+const StyledTag = styled('span')`
+	display: inline-flex;
+	font-size: 14px;
+	padding: 8px;
+	align-items: center;
+	justify-content: space-around;
+	min-width: 50px;
+	background: ${props => props.theme.colors[props.type]};
+	color: ${props => props.theme.colors[props.color]};
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+	border-radius: 17px;
+`;
+const Tag = ({
+  type = 'accent',
+  color = 'bright',
+  children
+}) => createComponent(StyledTag, {
+  type: type,
+  color: color,
+  children: children
+});
+
 const _tmpl$$6 = template(`<span></span>`);
 const Tooltip = ({
   title,
@@ -6662,6 +6799,18 @@ const CardsSection = () => createComponent(Container, {
       color: '#fff',
       title: 'Fill card title',
       label: 'Label',
+
+      get actions() {
+        return [{
+          label: 'Share',
+          onClick: () => alert('share'),
+          icon: createComponent(Icons.Share, {})
+        }, {
+          label: 'Save',
+          onClick: () => alert('save')
+        }];
+      },
+
       children: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui iste repellendus quibusdam quia iusto magnam totam doloribus deleniti error maxime hic ex voluptatibus commodi repudiandae illum, sit nulla minima sapiente!"
     }), createComponent(Card.Fill, {
       get background() {
@@ -6672,6 +6821,18 @@ const CardsSection = () => createComponent(Container, {
       title: 'Fill card title',
       label: 'Label',
       small: true,
+
+      get actions() {
+        return [{
+          label: 'Share',
+          onClick: () => alert('share'),
+          icon: createComponent(Icons.Share, {})
+        }, {
+          label: 'Save',
+          onClick: () => alert('save')
+        }];
+      },
+
       children: "Supporting description for the card goes here like a breeze."
     }), createComponent(Card.Fill, {
       background: 'https://github.com/specialdoom/solid-rev-kit/blob/main/src/assets/images/marble.png?raw=true',
