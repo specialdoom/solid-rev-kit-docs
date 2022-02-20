@@ -63,8 +63,10 @@ export const FormSection = () => {
 					Bright tag
 				</Tag>
 				<Tag type="dark">Dark tag</Tag>
+				<Tag type="dark" closable>Dark tag</Tag>
 				<Tag type="success">Success tag</Tag>
 				<Tag type="warning">Warning tag</Tag>
+				<Tag type="warning" closable>Warning tag</Tag>
 				<Tag type="error">Error tag</Tag>
 				<Tag type="accent">Accent tag</Tag>
 			</Container>
