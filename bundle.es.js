@@ -6470,7 +6470,7 @@ const Spinner = ({
 const StyledTag = styled('span')`
 	display: inline-flex;
 	font-size: 14px;
-	padding: 8px;
+	padding: 8px 16px;
 	align-items: center;
 	justify-content: space-around;
 	min-width: 50px;
@@ -6478,16 +6478,53 @@ const StyledTag = styled('span')`
 	color: ${props => props.theme.colors[props.color]};
 	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 	border-radius: 17px;
+	gap: 8px;
+
+	& svg {
+		height: 12px;
+		width: 12px;
+		cursor: pointer;
+	}
+
+	& path {
+		fill: ${props => props.theme.colors[props.color]};
+	}
 `;
 const Tag = ({
   type = 'accent',
   color = 'bright',
+  closable = false,
   children
-}) => createComponent(StyledTag, {
-  type: type,
-  color: color,
-  children: children
-});
+}) => {
+  const [getClosed, setClosed] = createSignal(true);
+  return createComponent(Show, {
+    get when() {
+      return getClosed();
+    },
+
+    get children() {
+      return createComponent(StyledTag, {
+        type: type,
+        color: color,
+
+        get children() {
+          return [children, createComponent(Show, {
+            when: closable,
+
+            get children() {
+              return createComponent(Icons.Cross, {
+                onClick: () => setClosed(false)
+              });
+            }
+
+          })];
+        }
+
+      });
+    }
+
+  });
+};
 
 const _tmpl$$6 = template(`<span></span>`);
 const Tooltip = ({
@@ -7254,10 +7291,18 @@ const FormSection = () => {
             type: "dark",
             children: "Dark tag"
           }), createComponent(Tag, {
+            type: "dark",
+            closable: true,
+            children: "Dark tag"
+          }), createComponent(Tag, {
             type: "success",
             children: "Success tag"
           }), createComponent(Tag, {
             type: "warning",
+            children: "Warning tag"
+          }), createComponent(Tag, {
+            type: "warning",
+            closable: true,
             children: "Warning tag"
           }), createComponent(Tag, {
             type: "error",
