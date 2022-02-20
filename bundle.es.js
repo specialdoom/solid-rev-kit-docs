@@ -1585,7 +1585,7 @@ const ChevronDown$1 = ({
 
 });
 
-const Share = ({
+const Share$1 = ({
   fill = '#2c2738',
   onClick
 }) => createComponent(Icon, {
@@ -1599,7 +1599,7 @@ const Share = ({
 
 });
 
-const Heart = ({
+const Heart$1 = ({
   fill = '#2c2738',
   onClick
 }) => createComponent(Icon, {
@@ -1619,12 +1619,12 @@ const Icons = Object.assign({}, {
   ChevronDown: ChevronDown$1,
   Circle,
   Cross: Cross$2,
-  Heart,
+  Heart: Heart$1,
   Lens: Lens$1,
   Minus: Minus$1,
   More: More$1,
   Plus: Plus$1,
-  Share
+  Share: Share$1
 });
 
 const calculateFontSize$1 = size => {
@@ -6964,7 +6964,9 @@ const {
   Burger,
   Lens,
   ChevronLeft,
-  ChevronDown
+  ChevronDown,
+  Heart,
+  Share
 } = Icons;
 const IconsSection = () => createComponent(Container, {
   type: 'fluid',
@@ -6974,7 +6976,7 @@ const IconsSection = () => createComponent(Container, {
   flexWrap: 'wrap',
 
   get children() {
-    return [createComponent(Cross, {}), createComponent(More, {}), createComponent(Plus, {}), createComponent(Minus, {}), createComponent(Burger, {}), createComponent(Lens, {}), createComponent(ChevronLeft, {}), createComponent(ChevronDown, {})];
+    return [createComponent(Cross, {}), createComponent(More, {}), createComponent(Plus, {}), createComponent(Minus, {}), createComponent(Burger, {}), createComponent(Lens, {}), createComponent(ChevronLeft, {}), createComponent(ChevronDown, {}), createComponent(Heart, {}), createComponent(Share, {})];
   }
 
 });
