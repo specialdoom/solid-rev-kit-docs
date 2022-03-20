@@ -1464,6 +1464,7 @@ const Plus$1 = ({
   onClick
 }) => createComponent(Icon, {
   onClick: onClick,
+  "data-testid": 'plus-icon',
 
   get children() {
     return createComponent(RevIcon.Plus, {
@@ -1478,6 +1479,7 @@ const Cross$2 = ({
   onClick
 }) => createComponent(Icon, {
   onClick: onClick,
+  "data-testid": 'cross-icon',
 
   get children() {
     return createComponent(RevIcon.Cross, {
@@ -1492,6 +1494,7 @@ const Minus$1 = ({
   onClick
 }) => createComponent(Icon, {
   onClick: onClick,
+  "data-testid": 'minus-icon',
 
   get children() {
     return createComponent(RevIcon.Minus, {
@@ -1506,6 +1509,7 @@ const More$1 = ({
   onClick
 }) => createComponent(Icon, {
   onClick: onClick,
+  "data-testid": 'more-icon',
 
   get children() {
     return createComponent(RevIcon.More, {
@@ -1520,6 +1524,7 @@ const Burger$1 = ({
   onClick
 }) => createComponent(Icon, {
   onClick: onClick,
+  "data-testid": 'burger-icon',
 
   get children() {
     return createComponent(RevIcon.Burger, {
@@ -1534,6 +1539,7 @@ const Lens$1 = ({
   onClick
 }) => createComponent(Icon, {
   onClick: onClick,
+  "data-testid": 'lens-icon',
 
   get children() {
     return createComponent(RevIcon.Lens, {
@@ -1548,6 +1554,7 @@ const Circle = ({
   onClick
 }) => createComponent(Icon, {
   onClick: onClick,
+  "data-testid": 'circle-icon',
 
   get children() {
     return createComponent(RevIcon.Circle, {
@@ -1562,6 +1569,7 @@ const ChevronLeft$1 = ({
   onClick
 }) => createComponent(Icon, {
   onClick: onClick,
+  "data-testid": 'chevronLeft-icon',
 
   get children() {
     return createComponent(RevIcon.ChevronLeft, {
@@ -1576,6 +1584,7 @@ const ChevronDown$1 = ({
   onClick
 }) => createComponent(Icon, {
   onClick: onClick,
+  "data-testid": 'chevronDown-icon',
 
   get children() {
     return createComponent(RevIcon.ChevronDown, {
@@ -1590,6 +1599,7 @@ const Share$1 = ({
   onClick
 }) => createComponent(Icon, {
   onClick: onClick,
+  "data-testid": 'share-icon',
 
   get children() {
     return createComponent(RevIcon.Share, {
@@ -1604,6 +1614,7 @@ const Heart$1 = ({
   onClick
 }) => createComponent(Icon, {
   onClick: onClick,
+  "data-testid": 'heart-icon',
 
   get children() {
     return createComponent(RevIcon.Heart, {
@@ -1755,6 +1766,7 @@ const Alert = ({
       return createComponent(StyledAlert, {
         type: type,
         color: color,
+        "data-testid": 'alert',
 
         get children() {
           return [createComponent(Typography.Paragraph, {
@@ -1788,6 +1800,7 @@ const Avatar$1 = ({
   round = false
 }) => createComponent(StyledAvatar$1, {
   round: round,
+  "data-testid": 'avatar',
   children: initials
 });
 
@@ -1802,11 +1815,12 @@ const StyledAvatar = styled('div')`
 `;
 const DefaultAvatar = ({
   type = 'steven',
-  round = false
-}) => createComponent(StyledAvatar, {
+  round = false,
+  ...rest
+}) => createComponent(StyledAvatar, mergeProps({
   type: type,
   round: round
-});
+}, rest));
 
 const Avatar = Object.assign(Avatar$1, {
   Steven: ({
@@ -1921,6 +1935,7 @@ const Button = ({
   small: small,
   disabled: disabled,
   className: `${variant}`,
+  "data-testid": 'button',
   children: children
 });
 
@@ -1961,6 +1976,8 @@ const SmallCallout = ({
   description,
   actions
 }) => createComponent(StyledSmallCallout, {
+  "data-testid": 'small-callout',
+
   get children() {
     return [createComponent(Typography.Heading, {
       size: 6,
@@ -1994,6 +2011,8 @@ const Callout = ({
 
   get children() {
     return createComponent(StyledLargeCallout, {
+      "data-testid": 'callout',
+
       get children() {
         return [createComponent(Typography.Heading, {
           size: 4,
@@ -2054,6 +2073,8 @@ const GenericCard = ({
   children,
   actions
 }) => createComponent(StyledCard$1, {
+  "data-testid": 'generic-card',
+
   get children() {
     return [createComponent(Show, {
       when: imageSrc,
@@ -5489,6 +5510,7 @@ const FillCard = ({
     background: background,
     color: color,
     small: small,
+    "data-testid": 'fill-card',
 
     get children() {
       return [createComponent(Show, {
@@ -5581,15 +5603,6 @@ const Card = Object.assign({}, {
   Generic: GenericCard
 });
 
-const arrowColorTypeMap = {
-  ['bright']: '#D5D6D7',
-  ['dark']: '#585364',
-  ['blueberry']: '#4874E9',
-  ['strawberry']: '#DF3468'
-};
-
-const getArrowColorByTypeMap = type => arrowColorTypeMap[type] ?? '#585364';
-
 const StyledBubble = styled('div')`
 	position: relative;
 	height: 50px;
@@ -5613,13 +5626,13 @@ const StyledBubble = styled('div')`
 	&[h-position="left"]::before {
 		left: 0;
 		border-width: 9px 0 9px 9px;
-		border-color: transparent transparent transparent ${props => getArrowColorByTypeMap(props.type)};
+		border-color: transparent transparent transparent ${props => props.theme.colors[props.type]};
 	}
 
 	&[h-position="right"]::before {
 		right: 0;
 		border-width: 9px 9px 9px 0;
-		border-color: transparent ${props => getArrowColorByTypeMap(props.type)} transparent transparent;
+		border-color: transparent ${props => props.theme.colors[props.type]} transparent transparent;
 	}
 
 	&[v-position="top"]::before {
@@ -5646,6 +5659,7 @@ const ChatBubble = ({
     return placement.split('-')[1];
   },
 
+  "data-testid": 'chat-bubble',
   children: children
 });
 
@@ -5733,6 +5747,7 @@ const Counter = ({
 
   return createComponent(CounterContainer, {
     disabled: disabled,
+    "data-testid": 'counter',
 
     get children() {
       return [createComponent(ControlButton, {
@@ -5814,10 +5829,20 @@ const Input = ({
   ...rest
 }) => createComponent(InputContainer, {
   disabled: disabled,
+  "data-testid": 'input',
 
   get children() {
     return [createComponent(StyledInput, mergeProps({
-      disabled: disabled
+      disabled: disabled,
+
+      get value() {
+        return rest.value;
+      },
+
+      get placeholder() {
+        return rest.placeholder;
+      }
+
     }, rest)), createComponent(Show, {
       when: icon,
       children: icon
@@ -5854,7 +5879,8 @@ const TextArea = ({
   rows = 4,
   ...rest
 }) => createComponent(StyledTextArea, mergeProps({
-  rows: rows
+  rows: rows,
+  "data-testid": 'text-area'
 }, rest));
 
 const StyledSpace = styled('div')`
@@ -5864,6 +5890,7 @@ const StyledSpace = styled('div')`
 const Space = ({
   children
 }) => createComponent(StyledSpace, {
+  "data-testid": 'space',
   children: children
 });
 
@@ -5931,6 +5958,8 @@ const Modal = ({
     return createComponent(ModalWrap, {
       get children() {
         return createComponent(ModalDialog, {
+          "data-testid": 'modal',
+
           get children() {
             return [createComponent(ModalHeader, {
               get children() {
@@ -6010,6 +6039,7 @@ const Progress = ({
   type: type,
   percent: percent,
   loading: loading,
+  "data-testid": 'progress',
 
   get children() {
     return _tmpl$$3$1.cloneNode(true);
@@ -6260,6 +6290,8 @@ const Select = ({
   };
 
   return createComponent(SelectContainer, {
+    "data-testid": 'select-container',
+
     get children() {
       return [(() => {
         const _el$ = _tmpl$$2$1.cloneNode(true);
@@ -6310,6 +6342,8 @@ const Select = ({
 
         get children() {
           return createComponent(OptionsList, {
+            "data-testid": 'select-options',
+
             get children() {
               return createComponent(For, {
                 each: options,
@@ -6420,6 +6454,7 @@ const Switch = ({
 
   return createComponent(StyledButton, {
     onClick: updateChecked,
+    "data-testid": 'switch',
 
     get children() {
       return [(() => {
@@ -6449,21 +6484,22 @@ const StyledSpinner = styled('div')`
   -webkit-animation: spin 2s linear infinite;
   animation: spin 2s linear infinite;
 
-@-webkit-keyframes spin {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
-}
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
 
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
 `;
 const Spinner = ({
   type = 'accent'
 }) => {
   return createComponent(StyledSpinner, {
-    type: type
+    type: type,
+    "data-testid": 'spinner'
   });
 };
 
@@ -6506,6 +6542,7 @@ const Tag = ({
       return createComponent(StyledTag, {
         type: type,
         color: color,
+        "data-testid": 'tag',
 
         get children() {
           return [children, createComponent(Show, {
