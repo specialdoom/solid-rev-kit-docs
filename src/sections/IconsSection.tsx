@@ -1,20 +1,14 @@
-import { Component } from 'solid-js';
+import { Component, For } from 'solid-js';
 import { Icons } from '@specialdoom/solid-rev-kit';
 import { Container } from '../Container';
-
-const { Cross, More, Plus, Minus, Burger, Lens, ChevronLeft, ChevronDown, Heart, Share } = Icons;
+import { Dynamic } from 'solid-js/web';
 
 export const IconsSection: Component = () => (
 	<Container type='fluid' flex gap='16px' flexDirection='row' flexWrap='wrap'>
-		<Cross />
-		<More />
-		<Plus />
-		<Minus />
-		<Burger />
-		<Lens />
-		<ChevronLeft />
-		<ChevronDown />
-		<Heart />
-		<Share />
+		<For each={Object.keys(Icons)}>{
+			//@ts-ignore
+			(key) => <Dynamic component={Icons[key]} />
+		}
+		</For>
 	</Container>
 );
