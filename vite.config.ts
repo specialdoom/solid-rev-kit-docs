@@ -8,10 +8,5 @@ export default defineConfig({
 		target: 'esnext',
 		outDir: 'public',
 		emptyOutDir: false,
-		lib: {
-			entry: path.resolve(__dirname, 'index.tsx'),
-			name: 'bundle',
-			fileName: 'bundle'
-		},
 	}
 });
