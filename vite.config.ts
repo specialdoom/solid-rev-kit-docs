@@ -9,10 +9,9 @@ export default defineConfig({
 		outDir: 'public',
 		emptyOutDir: false,
 		lib: {
-      entry: path.resolve(__dirname, 'index.tsx'),
-      name: 'bundle',
-      fileName: 'bundle'
-    },
-		polyfillDynamicImport: false,
+			entry: path.resolve(__dirname, 'index.tsx'),
+			name: 'bundle',
+			fileName: 'bundle'
+		},
 	}
 });
