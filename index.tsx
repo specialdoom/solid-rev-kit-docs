@@ -91,17 +91,19 @@ const App = () => {
       <Container type='fluid' flex flexWrap='wrap' flexDirection='row' gap='8px' justifyContent='space-between' alignItems='center'>
         <h3>How to use?</h3>
         <Container type='fluid' flex flexWrap='wrap' flexDirection='column' gap='8px' justifyContent='space-between'>
-            <Alert>npm i @specialdoom/solid-rev-kit solid-styled-components</Alert>
-            <Alert type="success">Wrap your <code>App</code> component with <code>RevKitTheme</code> component</Alert>
-            <Alert type="dark">Enjoy!</Alert>
+          <Alert>npm i @specialdoom/solid-rev-kit solid-styled-components</Alert>
+          <Alert type="success">Wrap your <code>App</code> component with <code>RevKitTheme</code> component</Alert>
+          <Alert type="dark">Enjoy!</Alert>
         </Container>
       </Container>
-      <For each={sections}>{(section, getIndex) =>
-        <>
-          <Legend title={section.title} rank={getIndex() + 1} />
-          {section.component}
-        </>
-      }
+      <For each={sections}>
+        {
+          (section, getIndex) =>
+            <>
+              <Legend title={section.title} rank={getIndex() + 1} />
+              {section.component}
+            </>
+        }
       </For>
     </div>
   );
