@@ -1,4 +1,4 @@
-import { Component } from 'solid-js';
+import { Component, JSXElement } from 'solid-js';
 import { styled } from 'solid-styled-components';
 
 interface ContainerProps {
@@ -33,7 +33,8 @@ interface ContainerProps {
 	| 'wrap'
 	| 'wrap-reverse'
 	| 'no-wrap',
-	padding?: string
+	padding?: string,
+	children: JSXElement
 }
 
 const StyledContainer = styled('div') <{

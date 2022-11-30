@@ -1,5 +1,5 @@
 import { For, render } from 'solid-js/web';
-import { RevKitTheme } from '@specialdoom/solid-rev-kit';
+import { Alert, RevKitTheme } from '@specialdoom/solid-rev-kit';
 import { Container } from './src/Container';
 import branding from './src/assets/branding.svg';
 import { Legend } from './src/Legend';
@@ -87,6 +87,14 @@ const App = () => {
     <div style={{ height: '80%' }}>
       <Container type='full' padding='0'>
         <img src={branding} alt='RevkitUI' width='100%' />
+      </Container>
+      <Container type='fluid' flex flexWrap='wrap' flexDirection='row' gap='8px' justifyContent='space-between' alignItems='center'>
+        <h3>How to use?</h3>
+        <Container type='fluid' flex flexWrap='wrap' flexDirection='column' gap='8px' justifyContent='space-between'>
+            <Alert>npm i @specialdoom/solid-rev-kit solid-styled-components</Alert>
+            <Alert type="success">Wrap your <code>App</code> component with <code>RevKitTheme</code> component</Alert>
+            <Alert type="dark">Enjoy!</Alert>
+        </Container>
       </Container>
       <For each={sections}>{(section, getIndex) =>
         <>
